@@ -8,12 +8,30 @@ export function Contact() {
     message: ''
   });
 
-  const handleSubmit = () => {
-    if (formData.name && formData.email && formData.message) {
-      alert('Form submitted! In a real app, this would send data to your backend.');
-      setFormData({ name: '', email: '', message: '' });
-    } else {
-      alert('Please fill in all fields');
+  const [status, setStatus] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('sending');
+    
+    try {
+      const response = await fetch('https://formspree.io/f/xbdlzzly', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setStatus(''), 5000);
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      setStatus('error');
     }
   };
 
@@ -25,15 +43,17 @@ export function Contact() {
           <p className="text-xl text-gray-600">Have questions? We'd love to hear from you</p>
         </div>
 
-        <div className="bg-white p-8 rounded-2xl shadow-lg">
+        <form onSubmit={handleSubmit} className="bg-white p-8 rounded-2xl shadow-lg">
           <div className="mb-6">
             <label className="block text-gray-700 font-medium mb-2">Your Name</label>
             <input
               type="text"
+              name="name"
               value={formData.name}
               onChange={(e) => setFormData({...formData, name: e.target.value})}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
               placeholder="John Doe"
+              required
             />
           </div>
 
@@ -41,35 +61,54 @@ export function Contact() {
             <label className="block text-gray-700 font-medium mb-2">Email Address</label>
             <input
               type="email"
+              name="email"
               value={formData.email}
               onChange={(e) => setFormData({...formData, email: e.target.value})}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
               placeholder="john@example.com"
+              required
             />
           </div>
 
           <div className="mb-6">
             <label className="block text-gray-700 font-medium mb-2">Your Message</label>
             <textarea
+              name="message"
               value={formData.message}
               onChange={(e) => setFormData({...formData, message: e.target.value})}
               rows="5"
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-none"
               placeholder="Tell us how we can help you..."
+              required
             />
           </div>
 
           <button
-            onClick={handleSubmit}
-            className="w-full py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg transform hover:-translate-y-0.5 transition-all"
+            type="submit"
+            disabled={status === 'sending'}
+            className="w-full py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg transform hover:-translate-y-0.5 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Send Message
+            {status === 'sending' ? 'Sending...' : 'Send Message'}
           </button>
 
-          <p className="text-center text-sm text-gray-500 mt-4">
-            We typically respond within 24 hours
-          </p>
-        </div>
+          {status === 'success' && (
+            <p className="text-center text-sm text-green-600 mt-4 font-medium">
+              Message sent successfully! We'll get back to you soon.
+            </p>
+          )}
+          
+          {status === 'error' && (
+            <p className="text-center text-sm text-red-600 mt-4 font-medium">
+              Something went wrong. Please try again.
+            </p>
+          )}
+
+          {!status && (
+            <p className="text-center text-sm text-gray-500 mt-4">
+              We typically respond within 24 hours
+            </p>
+          )}
+        </form>
       </div>
     </section>
   );
