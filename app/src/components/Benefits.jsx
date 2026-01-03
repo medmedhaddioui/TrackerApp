@@ -1,40 +1,40 @@
 export function Benefits() {
   const benefits = [
     {
-      category: 'Career Growth',
-      title: 'Accelerate Your Advancement',
-      description: 'Join thousands who have advanced their careers through our programs. Our structured approach and industry-recognized certifications open doors to better opportunities.',
-      stat: '89% promotion rate'
+      category: 'Time Savings',
+      title: 'Save Hours Daily',
+      description: 'Stop wasting time browsing multiple news sites and searching Google. Our AI does the work for you, delivering curated updates in minutes instead of hours.',
+      stat: '3+ hours saved daily'
     },
     {
-      category: 'Time Efficiency',
-      title: 'Learn 3x Faster',
-      description: 'Our curated curriculum and focused approach means you master skills faster than traditional self-study. Spend less time searching and more time learning.',
-      stat: '300+ hours saved'
+      category: 'Personalization',
+      title: 'Your News, Your Way',
+      description: 'Complete control over what you see. Whether you\'re tracking gold prices, political updates, or tech trends—get exactly what matters to you, nothing else.',
+      stat: '100% customized'
     },
     {
-      category: 'Cost Savings',
-      title: 'Unlimited Access',
-      description: 'One membership gives you access to all courses with no per-course fees. Learn multiple skills without breaking the bank or making per-course commitments.',
-      stat: '$5,000+ value'
+      category: 'Stay Informed',
+      title: 'Never Miss Updates',
+      description: 'Get daily automated updates on all your chosen topics. Stay ahead with real-time news aggregation that works 24/7 to keep you informed.',
+      stat: 'Real-time updates'
     },
     {
-      category: 'Confidence',
-      title: 'Build Real Skills',
-      description: 'Gain the confidence to tackle complex projects and lead technical teams. Our hands-on approach ensures you can apply what you learn immediately.',
-      stat: '95% confidence boost'
+      category: 'Convenience',
+      title: 'All In One Place',
+      description: 'Track multiple topics from one dashboard. Traders, professionals, enthusiasts—everyone gets their personalized news hub without juggling multiple sources.',
+      stat: 'Unlimited topics'
     },
     {
-      category: 'Community',
-      title: 'Network & Collaborate',
-      description: 'Connect with 50,000+ learners and industry professionals. Build relationships that support your learning journey and career growth long-term.',
-      stat: '50,000+ members'
+      category: 'Smart Filtering',
+      title: 'Quality Over Quantity',
+      description: 'Our AI filters out noise and irrelevant content, showing you only the most important and relevant updates. Get informed, not overwhelmed.',
+      stat: '95% relevance rate'
     },
     {
-      category: 'Flexibility',
-      title: 'Learn Your Way',
-      description: 'Study on your schedule without sacrificing your current job or commitments. Access content 24/7 from any device and learn at the pace that works for you.',
-      stat: '100% flexible'
+      category: 'Easy Access',
+      title: 'Effortless Daily Routine',
+      description: 'Set your preferences once, then simply check your personalized page daily. No searching, no scrolling—just the news you need, automatically delivered.',
+      stat: 'Set once, use forever'
     }
   ];
 
@@ -43,7 +43,7 @@ export function Benefits() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What You'll Gain</h2>
-          <p className="text-xl text-gray-600">Real results from real learners</p>
+          <p className="text-xl text-gray-600">Real benefits from smart news aggregation</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

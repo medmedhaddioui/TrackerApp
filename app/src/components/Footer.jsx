@@ -5,7 +5,7 @@ export function Footer({ scrollToSection }) {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
-              LearnHub
+              AI Daily News
             </div>
             <p className="text-sm">Empowering careers through world-class education</p>
           </div>
@@ -41,7 +41,7 @@ export function Footer({ scrollToSection }) {
         </div>
 
         <div className="border-t border-gray-800 pt-8 text-center text-sm">
-          <p>&copy; 2024 LearnHub. All rights reserved.</p>
+          <p>&copy; 2026 AI Daily News. All rights reserved.</p>
         </div>
       </div>
     </footer>

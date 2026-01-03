@@ -1,9 +1,9 @@
 export function About() {
   const stats = [
-    { value: '10,000+', label: 'Students Trained' },
-    { value: '87%', label: 'Completion Rate' },
-    { value: '250+', label: 'Partner Companies' },
-    { value: '47%', label: 'Avg. Salary Increase' }
+    { value: '50,000+', label: 'Active Users' },
+    { value: '500+', label: 'News Categories' },
+    { value: '24/7', label: 'Auto Updates' },
+    { value: '100%', label: 'Personalized' }
   ];
 
   return (
@@ -11,19 +11,19 @@ export function About() {
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About LearnHub</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About AI Daily News</h2>
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
-                Founded in 2020 by former tech industry leaders from Google, Amazon, and Microsoft, we recognized a critical gap between traditional education and the skills companies actually need in today's fast-paced digital economy.
+                AI Daily News is an intelligent news aggregation platform that lets you choose the type of news you want to follow daily. Instead of spending time searching Google every day, our AI automatically collects and displays the most relevant updates based on your interests.
               </p>
               <p>
-                Our mission is to democratize access to high-quality technical education. We believe that anyone, regardless of their background or location, should have the opportunity to learn cutting-edge skills and build a rewarding career in technology.
+                For example, a trader can select gold prices and related market updates to receive them automatically every day. A policy enthusiast may choose to follow political news about their country. A tech professional might track AI developments and software updates.
               </p>
               <p>
-                We've trained over 10,000 professionals who've gone on to work at leading companies like Google, Amazon, Microsoft, and innovative startups worldwide. Our graduates report an average salary increase of 47% within one year of completing their programs.
+                Each day, our application generates a dedicated personalized page with fresh updates based on your selected interests. You interact with the app once, set your preferences, and get curated news delivered to you daily without the hassle of manual searching.
               </p>
               <p>
-                What makes us different is our focus on practical, project-based learning combined with ongoing career support. We don't just teach theory—we prepare you for real-world challenges and help you succeed in your career journey.
+                What makes us different is our AI-powered curation combined with complete personalization. We don't just show you everything—we learn what matters to you and deliver exactly that, saving you time and keeping you informed effortlessly.
               </p>
             </div>
           </div>

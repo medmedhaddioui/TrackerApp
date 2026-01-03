@@ -3,22 +3,22 @@ export function HowItWorks() {
     {
       number: '01',
       title: 'Create Your Account',
-      description: 'Sign up with your email in under 2 minutes. No credit card required for our free tier. Verify your email and complete your profile setup to get personalized recommendations.'
+      description: 'Sign up with your email in under 2 minutes. No credit card required. Set up your profile and get ready to personalize your news experience.'
     },
     {
       number: '02',
-      title: 'Choose Your Path',
-      description: 'Browse our curated learning paths or take a quick 5-minute assessment. We recommend programs based on your current skills, career goals, and available time commitment.'
+      title: 'Select Your Topics',
+      description: 'Choose the news categories you want to follow—gold prices, political updates, tech news, sports, or any topic you care about. Add as many as you like.'
     },
     {
       number: '03',
-      title: 'Start Learning',
-      description: 'Access your first lesson immediately. Follow structured modules with video lectures, reading materials, and coding exercises. Track your progress through our interactive dashboard.'
+      title: 'Let AI Work',
+      description: 'Our AI automatically scans thousands of sources daily, filtering and curating the most relevant news based on your selections. No manual searching required.'
     },
     {
       number: '04',
-      title: 'Earn & Apply',
-      description: 'Complete courses to earn industry-recognized certificates. Build portfolio projects and apply your skills in real-world scenarios. Get career support to land your next role.'
+      title: 'Get Daily Updates',
+      description: 'Every day, access your personalized news page with fresh, curated updates. Stay informed effortlessly and never miss what matters to you.'
     }
   ];
 

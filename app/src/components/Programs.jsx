@@ -1,64 +1,64 @@
 export function Programs() {
   const programs = [
     {
-      title: 'Full-Stack Web Development',
-      description: 'Master modern web development from front-end to back-end. Build real-world applications using React, Node.js, and cloud technologies.',
+      title: 'Financial Markets',
+      description: 'Track gold prices, stock markets, cryptocurrency, forex, and economic indicators. Perfect for traders and investors who need daily market updates.',
       highlights: [
-        'Duration: 12 weeks, 10-15 hrs/week',
-        'Level: Beginner to Intermediate',
-        'Skills: React, Node.js, PostgreSQL, AWS',
-        'Format: Self-paced + live Q&A'
+        'Gold & Silver prices',
+        'Stock market updates',
+        'Cryptocurrency trends',
+        'Economic news & analysis'
       ],
       popular: true
     },
     {
-      title: 'Data Science & Machine Learning',
-      description: 'Learn to analyze data and build ML models. Master Python, statistical analysis, and deploy production-ready AI solutions.',
+      title: 'Politics & Government',
+      description: 'Follow political news about your country or internationally. Get updates on policies, elections, government decisions, and political analysis.',
       highlights: [
-        'Duration: 16 weeks, 12-18 hrs/week',
-        'Level: Intermediate',
-        'Skills: Python, TensorFlow, Statistics',
-        'Format: Project-based learning'
+        'National politics',
+        'International relations',
+        'Policy changes',
+        'Election coverage'
       ]
     },
     {
-      title: 'Cloud Architecture & DevOps',
-      description: 'Become a cloud expert with AWS, Azure, and GCP. Learn infrastructure as code, CI/CD pipelines, and container orchestration.',
+      title: 'Technology & Innovation',
+      description: 'Stay updated on AI developments, software releases, tech company news, and innovations. Essential for tech professionals and enthusiasts.',
       highlights: [
-        'Duration: 10 weeks, 8-12 hrs/week',
-        'Level: Intermediate to Advanced',
-        'Skills: AWS, Docker, Kubernetes, Terraform',
-        'Format: Hands-on labs'
+        'AI & Machine Learning',
+        'Software updates',
+        'Tech company news',
+        'Innovation trends'
       ]
     },
     {
-      title: 'Mobile App Development',
-      description: 'Build native iOS and Android apps. Learn React Native and Swift to create beautiful, performant mobile applications.',
+      title: 'Business & Economy',
+      description: 'Track business news, company earnings, mergers & acquisitions, and economic trends. Stay informed about the business world.',
       highlights: [
-        'Duration: 14 weeks, 10-14 hrs/week',
-        'Level: Beginner to Intermediate',
-        'Skills: React Native, Swift, Firebase',
-        'Format: Build 5 real apps'
+        'Company earnings',
+        'Business strategies',
+        'Market analysis',
+        'Economic indicators'
       ]
     },
     {
-      title: 'Cybersecurity Professional',
-      description: 'Protect systems and networks from threats. Learn ethical hacking, security auditing, and compliance frameworks.',
+      title: 'Sports & Entertainment',
+      description: 'Follow your favorite sports teams, athletes, and entertainment news. Get scores, highlights, and breaking news from the sports world.',
       highlights: [
-        'Duration: 20 weeks, 12-16 hrs/week',
-        'Level: Intermediate',
-        'Skills: Penetration testing, CISSP prep',
-        'Format: Live security exercises'
+        'Live scores & results',
+        'Team updates',
+        'Player news',
+        'Entertainment headlines'
       ]
     },
     {
-      title: 'Product Management',
-      description: 'Lead product development from idea to launch. Learn strategy, user research, roadmapping, and agile methodologies.',
+      title: 'Custom Topics',
+      description: 'Choose any topic you want to follow. From health and science to lifestyle and travel—create your perfect personalized news feed.',
       highlights: [
-        'Duration: 8 weeks, 8-10 hrs/week',
-        'Level: All levels',
-        'Skills: Product strategy, User research, Agile',
-        'Format: Case studies + mentorship'
+        'Health & wellness',
+        'Science discoveries',
+        'Travel updates',
+        'Any custom topic'
       ]
     }
   ];
@@ -67,8 +67,8 @@ export function Programs() {
     <section id="programs" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Programs</h2>
-          <p className="text-xl text-gray-600">Choose the path that fits your goals</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Popular News Topics</h2>
+          <p className="text-xl text-gray-600">Choose the topics that matter to you</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -90,7 +90,7 @@ export function Programs() {
                 ))}
               </ul>
               <button className="w-full py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg transform hover:-translate-y-0.5 transition-all">
-                Learn More
+                Follow This Topic
               </button>
             </div>
           ))}
