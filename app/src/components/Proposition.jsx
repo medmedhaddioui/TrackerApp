@@ -1,4 +1,4 @@
-const Proposition = () => {
+export function Proposition () {
       const values = [
     {
       title: 'AI-Powered Curation',
@@ -46,4 +46,3 @@ const Proposition = () => {
     </section>
   );
 }
-export default Proposition

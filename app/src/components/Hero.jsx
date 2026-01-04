@@ -1,8 +1,7 @@
 import React from "react";
 
-const  Hero = () =>  {
+export function Hero({ scrollToSection }) {
   return (
-
     <section id="hero" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 via-white to-purple-50">
       <div className="max-w-7xl mx-auto text-center">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
@@ -26,5 +25,3 @@ const  Hero = () =>  {
     </section>
   );
 }
-
-export default Hero;
