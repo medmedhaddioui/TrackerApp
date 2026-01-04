@@ -38,9 +38,67 @@ export default function InternsPage() {
   ];
 
   const careerFields = [
-    'Architecture', 'Business', 'Computer Science', 'Fashion & Design',
-    'Finance', 'Environment & Sustainability', 'Healthcare', 'HR',
-    'Marketing', 'Media & Communications', 'Engineering', 'Startup'
+    { name: 'Architecture', icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+      </svg>
+    )},
+    { name: 'Business', icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    )},
+    { name: 'Computer Science', icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+      </svg>
+    )},
+    { name: 'Fashion & Design', icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+      </svg>
+    )},
+    { name: 'Finance', icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    )},
+    { name: 'Environment & Sustainability', icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    )},
+    { name: 'Healthcare', icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+      </svg>
+    )},
+    { name: 'HR', icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+      </svg>
+    )},
+    { name: 'Marketing', icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+      </svg>
+    )},
+    { name: 'Media & Communications', icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+      </svg>
+    )},
+    { name: 'Engineering', icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+    )},
+    { name: 'Startup', icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+    )}
   ];
 
   const faqs = [
@@ -51,18 +109,28 @@ export default function InternsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <style>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+        }
+      `}</style>
+      <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-32 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0A2A2A 0%, #1A4D4D 50%, #00B8A9 100%)' }}>
+      <section className="relative py-32 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0A2A2A 0%, #1A4D4D 40%, #00B8A9 80%, #1A4D4D 100%)' }}>
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-30" style={{ background: 'radial-gradient(circle, #FF8C42 0%, transparent 70%)', filter: 'blur(100px)' }}></div>
-          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full opacity-30" style={{ background: 'radial-gradient(circle, #00B8A9 0%, transparent 70%)', filter: 'blur(100px)' }}></div>
+          <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'radial-gradient(circle at 25% 25%, rgba(0,184,169,0.3) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(255,140,66,0.3) 0%, transparent 50%)' }}></div>
+          <div className="absolute top-0 right-0 w-[900px] h-[900px] rounded-full opacity-25" style={{ background: 'radial-gradient(circle, #FF8C42 0%, transparent 70%)', filter: 'blur(130px)', animation: 'pulse 10s ease-in-out infinite' }}></div>
+          <div className="absolute bottom-0 left-0 w-[900px] h-[900px] rounded-full opacity-25" style={{ background: 'radial-gradient(circle, #00B8A9 0%, transparent 70%)', filter: 'blur(130px)', animation: 'pulse 10s ease-in-out infinite 5s' }}></div>
+          <div className="absolute top-1/3 left-1/2 w-[700px] h-[700px] rounded-full opacity-20" style={{ background: 'radial-gradient(circle, #FFB88C 0%, transparent 70%)', filter: 'blur(110px)', animation: 'pulse 8s ease-in-out infinite 3s' }}></div>
         </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full mb-8 backdrop-blur-xl" style={{ background: 'linear-gradient(135deg, rgba(0, 184, 169, 0.2) 0%, rgba(255, 140, 66, 0.2) 100%)', border: '1px solid rgba(255, 255, 255, 0.25)' }}>
+              <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full mb-8 backdrop-blur-xl shadow-2xl relative overflow-hidden group" style={{ background: 'linear-gradient(135deg, rgba(0, 184, 169, 0.15) 0%, rgba(255, 140, 66, 0.15) 100%)', border: '1px solid rgba(255, 255, 255, 0.3)', boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.3)' }}>
+                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" style={{ background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)' }}></div>
                 <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
@@ -78,13 +146,14 @@ export default function InternsPage() {
               </p>
               
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-                <a href="#" className="group flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-500 hover:-translate-y-1" style={{ background: 'linear-gradient(135deg, #FF8C42 0%, #FF6B2B 100%)', color: '#FFFFFF', boxShadow: '0 20px 40px rgba(255, 140, 66, 0.4)' }}>
-                  <span>Enroll Now</span>
-                  <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <a href="#" className="group relative flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-500 hover:-translate-y-1 hover:scale-105 overflow-hidden" style={{ background: 'linear-gradient(135deg, #FF8C42 0%, #FF6B2B 100%)', color: '#FFFFFF', boxShadow: '0 20px 40px rgba(255, 140, 66, 0.4)' }}>
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: 'linear-gradient(135deg, #FF6B2B 0%, #FF8C42 100%)' }}></div>
+                  <span className="relative z-10">Enroll Now</span>
+                  <svg className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </a>
-                <a href="#how-it-works" className="px-8 py-4 rounded-2xl font-bold text-lg backdrop-blur-xl transition-all duration-500 hover:-translate-y-1" style={{ background: 'rgba(255, 255, 255, 0.1)', color: '#FFFFFF', border: '2px solid rgba(255, 255, 255, 0.3)' }}>
+                <a href="#how-it-works" className="px-8 py-4 rounded-2xl font-bold text-lg backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:scale-105" style={{ background: 'rgba(255, 255, 255, 0.1)', color: '#FFFFFF', border: '2px solid rgba(255, 255, 255, 0.3)', boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)' }}>
                   How It Works
                 </a>
               </div>
@@ -92,10 +161,10 @@ export default function InternsPage() {
 
             <div className="hidden lg:block relative">
               <div className="relative rounded-3xl overflow-hidden" style={{ boxShadow: '0 40px 80px rgba(0, 0, 0, 0.3)' }}>
-                <img src="/internship_girl_img.png" alt="Intern working" className="w-full h-auto object-cover" />
+                <img src="/1727287523325.jpg" alt="Intern working" className="w-full h-auto object-cover" />
               </div>
               
-              <div className="absolute -left-8 bottom-8 p-4 rounded-2xl backdrop-blur-xl animate-bounce" style={{ background: 'rgba(255, 255, 255, 0.95)', boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15)', animationDuration: '3s' }}>
+              <div className="absolute -left-8 bottom-8 p-4 rounded-2xl backdrop-blur-xl animate-bounce shadow-2xl" style={{ background: 'rgba(255, 255, 255, 0.95)', boxShadow: '0 20px 60px rgba(0, 0, 0, 0.2)', animationDuration: '3s', border: '1px solid rgba(255, 255, 255, 0.5)' }}>
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #00B8A9 0%, #1A4D4D 100%)' }}>
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -114,8 +183,14 @@ export default function InternsPage() {
       </section>
 
       {/* Challenge Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #F8F9FA 0%, #FFFFFF 100%)' }}>
+        <div className="absolute top-0 left-0 w-64 h-64 rounded-full opacity-10" style={{ background: 'radial-gradient(circle, #00B8A9 0%, transparent 70%)', filter: 'blur(60px)' }}></div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+          <div className="inline-block p-1 rounded-3xl mb-8" style={{ background: 'linear-gradient(135deg, #00B8A9, #FF8C42)' }}>
+            <div className="bg-white rounded-3xl px-8 py-4">
+              <span className="text-2xl font-bold" style={{ background: 'linear-gradient(135deg, #00B8A9, #FF8C42)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>The Challenge</span>
+            </div>
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-8" style={{ color: '#1A4D4D' }}>
             The Reality of Starting Your Career
           </h2>
@@ -132,7 +207,7 @@ export default function InternsPage() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full mb-6" style={{ background: 'linear-gradient(135deg, rgba(0,184,169,0.1) 0%, rgba(255,140,66,0.1) 100%)' }}>
+            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full mb-6 shadow-lg" style={{ background: 'linear-gradient(135deg, rgba(0,184,169,0.1) 0%, rgba(255,140,66,0.1) 100%)', border: '1px solid rgba(0,184,169,0.2)' }}>
               <svg className="w-5 h-5" style={{ color: '#00B8A9' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
@@ -148,12 +223,19 @@ export default function InternsPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
-              <div key={index} className="group relative p-8 rounded-3xl transition-all duration-500 hover:-translate-y-4 border border-gray-100" style={{ background: '#FFFFFF', boxShadow: '0 10px 40px rgba(0, 0, 0, 0.08)' }}>
-                <div className="w-16 h-16 rounded-2xl mb-6 flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-6" style={{ background: `linear-gradient(135deg, ${index % 2 === 0 ? '#00B8A9' : '#FF8C42'} 0%, ${index % 2 === 0 ? '#1A4D4D' : '#FF6B2B'} 100%)`, color: '#FFFFFF', boxShadow: `0 10px 30px ${index % 2 === 0 ? 'rgba(0,184,169,0.3)' : 'rgba(255,140,66,0.3)'}` }}>
-                  {benefit.icon}
+              <div key={index} className="group relative p-8 rounded-3xl transition-all duration-500 hover:-translate-y-4 hover:shadow-2xl border overflow-hidden" style={{ background: '#FFFFFF', boxShadow: '0 10px 40px rgba(0, 0, 0, 0.06)', borderColor: 'rgba(0,184,169,0.1)', animationDelay: `${index * 100}ms` }}>
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-teal-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute top-0 right-0 w-32 h-32 rounded-full opacity-0 group-hover:opacity-20 transition-all duration-500" style={{ background: `${index % 2 === 0 ? '#00B8A9' : '#FF8C42'}`, filter: 'blur(40px)', transform: 'translate(25%, -25%)' }}></div>
+                <div className="relative w-16 h-16 rounded-2xl mb-6 flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-lg text-white" style={{ background: `linear-gradient(135deg, ${index % 2 === 0 ? '#00B8A9' : '#FF8C42'} 0%, ${index % 2 === 0 ? '#1A4D4D' : '#FF6B2B'} 100%)`, boxShadow: `0 10px 30px ${index % 2 === 0 ? 'rgba(0,184,169,0.3)' : 'rgba(255,140,66,0.3)'}` }}>
+                  <div className="w-8 h-8 flex items-center justify-center">
+                    {benefit.icon}
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold mb-4" style={{ color: '#1A4D4D' }}>{benefit.title}</h3>
-                <p className="text-base" style={{ color: '#2D2D2D' }}>{benefit.description}</p>
+                <h3 className="relative text-xl font-bold mb-4 group-hover:text-teal-600 transition-colors duration-300" style={{ color: '#1A4D4D' }}>
+                  {benefit.title}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-500 to-orange-500 group-hover:w-full transition-all duration-500"></span>
+                </h3>
+                <p className="relative text-base" style={{ color: '#2D2D2D' }}>{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -161,9 +243,10 @@ export default function InternsPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #1A4D4D 0%, #00B8A9 100%)' }}>
+      <section className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #1A4D4D 0%, #00B8A9 50%, #1A4D4D 100%)' }}>
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full opacity-20" style={{ background: '#FF8C42', filter: 'blur(100px)' }}></div>
+          <div className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full opacity-20" style={{ background: '#FF8C42', filter: 'blur(120px)', animation: 'pulse 8s ease-in-out infinite' }}></div>
+          <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full opacity-15" style={{ background: '#FFB88C', filter: 'blur(100px)', animation: 'pulse 8s ease-in-out infinite 4s' }}></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -176,7 +259,8 @@ export default function InternsPage() {
               { number: '2', label: 'Coaching Calls' },
               { number: '1 in 3', label: 'Get Hired' }
             ].map((stat, index) => (
-              <div key={index} className="text-center p-8 rounded-3xl backdrop-blur-xl" style={{ background: 'rgba(255, 255, 255, 0.1)', border: '1px solid rgba(255, 255, 255, 0.2)' }}>
+              <div key={index} className="text-center p-8 rounded-3xl backdrop-blur-xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative group" style={{ background: 'rgba(255, 255, 255, 0.1)', border: '1px solid rgba(255, 255, 255, 0.2)', boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)', animation: `float 3s ease-in-out infinite ${index * 0.5}s` }}>
+                <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: 'linear-gradient(135deg, rgba(255,140,66,0.1) 0%, rgba(0,184,169,0.1) 100%)' }}></div>
                 <div className="text-4xl md:text-5xl font-bold mb-2" style={{ background: 'linear-gradient(135deg, #FF8C42 0%, #FFFFFF 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                   {stat.number}
                 </div>
@@ -188,7 +272,7 @@ export default function InternsPage() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="experiences" className="py-24 bg-gray-50">
+      <section id="experiences" className="py-24" style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, rgba(0, 184, 169, 0.05) 100%)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-center mb-16" style={{ color: '#1A4D4D' }}>
             Why Students Love Virtual Internships
@@ -196,16 +280,18 @@ export default function InternsPage() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="group p-8 rounded-3xl transition-all duration-500 hover:-translate-y-4" style={{ background: '#FFFFFF', boxShadow: '0 10px 40px rgba(0, 0, 0, 0.08)', border: '1px solid rgba(0, 184, 169, 0.2)' }}>
-                <div className="flex items-start gap-6 mb-6">
-                  <img src={testimonial.image} alt={testimonial.name} className="w-20 h-20 rounded-2xl object-cover" style={{ boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }} />
+              <div key={index} className="group p-8 rounded-3xl transition-all duration-500 hover:-translate-y-4 hover:shadow-2xl relative overflow-hidden" style={{ background: '#FFFFFF', boxShadow: '0 10px 40px rgba(0, 0, 0, 0.06)', border: '1px solid rgba(0, 184, 169, 0.2)', transform: `perspective(1000px) rotateX(${index % 2 === 0 ? '2deg' : '-2deg'})` }}>
+                <div className="absolute inset-0 bg-gradient-to-br from-teal-50/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full opacity-10 group-hover:opacity-30 transition-opacity duration-500" style={{ background: 'radial-gradient(circle, #00B8A9 0%, transparent 70%)', filter: 'blur(40px)' }}></div>
+                <div className="relative flex items-start gap-6 mb-6">
+                  <img src={testimonial.image} alt={testimonial.name} className="w-20 h-20 rounded-2xl object-cover shadow-lg" style={{ boxShadow: '0 10px 30px rgba(0, 0, 0, 0.15)' }} />
                   <div>
                     <h3 className="text-xl font-bold" style={{ color: '#1A4D4D' }}>{testimonial.name}</h3>
                     <p className="text-sm" style={{ color: '#2D2D2D' }}>{testimonial.school}</p>
                   </div>
                 </div>
-                <p className="text-lg mb-4" style={{ color: '#2D2D2D' }}>{testimonial.internship}</p>
-                <p className="font-semibold" style={{ color: '#00B8A9' }}>{testimonial.outcome}</p>
+                <p className="relative text-lg mb-4" style={{ color: '#2D2D2D' }}>{testimonial.internship}</p>
+                <p className="relative font-semibold" style={{ color: '#00B8A9' }}>{testimonial.outcome}</p>
               </div>
             ))}
           </div>
@@ -239,13 +325,14 @@ export default function InternsPage() {
                 </svg>
               )}
             ].map((step, index) => (
-              <div key={index} className="group text-center p-8 rounded-3xl transition-all duration-500 hover:-translate-y-4" style={{ background: '#FFFFFF', boxShadow: '0 10px 40px rgba(0, 0, 0, 0.08)' }}>
-                <div className="w-20 h-20 rounded-2xl mx-auto mb-6 flex items-center justify-center transition-all duration-500 group-hover:scale-110" style={{ background: `linear-gradient(135deg, ${index % 2 === 0 ? '#00B8A9' : '#FF8C42'} 0%, ${index % 2 === 0 ? '#1A4D4D' : '#FF6B2B'} 100%)`, color: '#FFFFFF' }}>
+              <div key={index} className="group text-center p-8 rounded-3xl transition-all duration-500 hover:-translate-y-4 hover:shadow-2xl relative overflow-hidden" style={{ background: '#FFFFFF', boxShadow: '0 10px 40px rgba(0, 0, 0, 0.06)', border: '1px solid rgba(0,184,169,0.1)' }}>
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-teal-50/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative w-20 h-20 rounded-2xl mx-auto mb-6 flex items-center justify-center transition-all duration-500 group-hover:scale-110 shadow-lg" style={{ background: `linear-gradient(135deg, ${index % 2 === 0 ? '#00B8A9' : '#FF8C42'} 0%, ${index % 2 === 0 ? '#1A4D4D' : '#FF6B2B'} 100%)`, color: '#FFFFFF' }}>
                   {step.icon}
                 </div>
-                <div className="text-sm font-bold mb-3" style={{ color: index % 2 === 0 ? '#00B8A9' : '#FF8C42' }}>Step {step.step}</div>
-                <h3 className="text-xl font-bold mb-4" style={{ color: '#1A4D4D' }}>{step.title}</h3>
-                <p style={{ color: '#2D2D2D' }}>{step.description}</p>
+                <div className="relative text-sm font-bold mb-3" style={{ color: index % 2 === 0 ? '#00B8A9' : '#FF8C42' }}>Step {step.step}</div>
+                <h3 className="relative text-xl font-bold mb-4" style={{ color: '#1A4D4D' }}>{step.title}</h3>
+                <p className="relative" style={{ color: '#2D2D2D' }}>{step.description}</p>
               </div>
             ))}
           </div>
@@ -253,7 +340,7 @@ export default function InternsPage() {
       </section>
 
       {/* Career Fields Section */}
-      <section id="career-fields" className="py-24 bg-gray-50">
+      <section id="career-fields" className="py-24" style={{ background: 'linear-gradient(180deg, rgba(0, 184, 169, 0.05) 0%, #FFFFFF 100%)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6" style={{ color: '#1A4D4D' }}>Explore Career Fields</h2>
@@ -261,9 +348,13 @@ export default function InternsPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {careerFields.map((field, index) => (
-              <div key={index} className="group p-6 rounded-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105" style={{ background: '#FFFFFF', boxShadow: '0 5px 20px rgba(0, 0, 0, 0.06)', border: '1px solid rgba(0, 184, 169, 0.1)' }}>
-                <div className="w-10 h-10 rounded-xl mb-4 transition-all duration-500 group-hover:scale-110" style={{ background: `linear-gradient(135deg, ${index % 2 === 0 ? '#00B8A9' : '#FF8C42'} 0%, ${index % 2 === 0 ? '#1A4D4D' : '#FF6B2B'} 100%)` }}></div>
-                <h3 className="font-bold" style={{ color: '#1A4D4D' }}>{field}</h3>
+              <div key={index} className="group p-6 rounded-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 hover:shadow-xl relative overflow-hidden cursor-pointer" style={{ background: '#FFFFFF', boxShadow: '0 5px 20px rgba(0, 0, 0, 0.06)', border: '1px solid rgba(0, 184, 169, 0.1)' }}>
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent to-teal-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-all duration-500" style={{ background: `linear-gradient(135deg, ${index % 2 === 0 ? '#00B8A9' : '#FF8C42'} 0%, transparent 100%)` }}></div>
+                <div className="relative w-10 h-10 rounded-xl mb-4 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 shadow-md flex items-center justify-center text-white" style={{ background: `linear-gradient(135deg, ${index % 2 === 0 ? '#00B8A9' : '#FF8C42'} 0%, ${index % 2 === 0 ? '#1A4D4D' : '#FF6B2B'} 100%)` }}>
+                  {field.icon}
+                </div>
+                <h3 className="relative font-bold" style={{ color: '#1A4D4D' }}>{field.name}</h3>
               </div>
             ))}
           </div>
@@ -279,7 +370,8 @@ export default function InternsPage() {
 
           <div className="space-y-6">
             {faqs.map((faq, index) => (
-              <div key={index} className="p-8 rounded-3xl" style={{ background: 'linear-gradient(135deg, rgba(0, 184, 169, 0.05) 0%, rgba(255, 140, 66, 0.05) 100%)', borderLeft: '4px solid #00B8A9' }}>
+              <div key={index} className="p-8 rounded-3xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1 relative group overflow-hidden" style={{ background: 'linear-gradient(135deg, rgba(0, 184, 169, 0.05) 0%, rgba(255, 140, 66, 0.05) 100%)', borderLeft: '4px solid #00B8A9', boxShadow: '0 5px 20px rgba(0, 0, 0, 0.05)' }}>
+                <div className="absolute top-0 right-0 w-32 h-32 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-500" style={{ background: 'radial-gradient(circle, #00B8A9 0%, transparent 70%)', filter: 'blur(30px)', transform: 'translate(25%, -25%)' }}></div>
                 <h3 className="text-xl font-bold mb-4" style={{ color: '#1A4D4D' }}>{faq.question}</h3>
                 <p style={{ color: '#2D2D2D' }}>{faq.answer}</p>
               </div>
@@ -289,9 +381,10 @@ export default function InternsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #00B8A9 0%, #1A4D4D 100%)' }}>
+      <section className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #00B8A9 0%, #1A4D4D 50%, #00B8A9 100%)' }}>
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-20" style={{ background: '#FF8C42', filter: 'blur(100px)' }}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-20" style={{ background: '#FF8C42', filter: 'blur(120px)', animation: 'pulse 8s ease-in-out infinite' }}></div>
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-15" style={{ background: '#FFB88C', filter: 'blur(100px)', animation: 'pulse 8s ease-in-out infinite 4s' }}></div>
         </div>
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -301,14 +394,16 @@ export default function InternsPage() {
           <p className="text-xl mb-10 text-white/80">
             Join our global network of successful alumni.
           </p>
-          <a href="#" className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-500 hover:scale-110" style={{ background: 'linear-gradient(135deg, #FF8C42 0%, #FF6B2B 100%)', color: '#FFFFFF', boxShadow: '0 20px 40px rgba(255, 140, 66, 0.4)' }}>
-            <span>Enroll Now</span>
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <a href="#" className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-500 hover:scale-110 hover:shadow-2xl relative group overflow-hidden" style={{ background: 'linear-gradient(135deg, #FF8C42 0%, #FF6B2B 100%)', color: '#FFFFFF', boxShadow: '0 20px 60px rgba(255, 140, 66, 0.5)' }}>
+            <div className="absolute inset-0 rounded-2xl animate-pulse" style={{ background: 'linear-gradient(135deg, #FF6B2B 0%, #FF8C42 100%)', opacity: 0 }}></div>
+            <span className="relative z-10">Enroll Now</span>
+            <svg className="relative z-10 w-6 h-6 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
           </a>
         </div>
       </section>
     </div>
+    </>
   );
 }
