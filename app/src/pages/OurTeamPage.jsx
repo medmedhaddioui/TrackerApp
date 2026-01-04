@@ -45,10 +45,11 @@ export default function OurTeamPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="relative overflow-hidden py-32" style={{ background: 'linear-gradient(135deg, #1A4D4D 0%, #00B8A9 100%)' }}>
+      <div className="relative overflow-hidden py-32" style={{ background: 'linear-gradient(135deg, #1A4D4D 0%, #00B8A9 50%, #1A4D4D 100%)' }}>
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-30" style={{ background: 'radial-gradient(circle, #FF8C42 0%, transparent 70%)', filter: 'blur(100px)' }}></div>
-          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full opacity-30" style={{ background: 'radial-gradient(circle, #FFFFFF 0%, transparent 70%)', filter: 'blur(100px)' }}></div>
+          <div className="absolute top-0 right-0 w-[900px] h-[900px] rounded-full opacity-25" style={{ background: 'radial-gradient(circle, #FF8C42 0%, transparent 70%)', filter: 'blur(130px)', animation: 'pulse 9s ease-in-out infinite' }}></div>
+          <div className="absolute bottom-0 left-0 w-[900px] h-[900px] rounded-full opacity-25" style={{ background: 'radial-gradient(circle, #FFFFFF 0%, transparent 70%)', filter: 'blur(130px)', animation: 'pulse 9s ease-in-out infinite 4.5s' }}></div>
+          <div className="absolute top-1/2 left-1/2 w-[700px] h-[700px] rounded-full opacity-20" style={{ background: 'radial-gradient(circle, #00B8A9 0%, transparent 70%)', filter: 'blur(110px)', transform: 'translate(-50%, -50%)', animation: 'pulse 7s ease-in-out infinite 2s' }}></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -90,13 +91,15 @@ export default function OurTeamPage() {
           {teamStats.map((stat, index) => (
             <div
               key={index}
-              className="p-8 rounded-3xl text-center transition-all duration-300 hover:-translate-y-2"
+              className="p-8 rounded-3xl text-center transition-all duration-500 hover:-translate-y-4 hover:shadow-2xl group relative overflow-hidden"
               style={{
-                background: 'linear-gradient(135deg, rgba(0, 184, 169, 0.1) 0%, rgba(26, 77, 77, 0.1) 100%)',
-                border: '2px solid rgba(0, 184, 169, 0.2)'
+                background: 'linear-gradient(135deg, rgba(0, 184, 169, 0.08) 0%, rgba(26, 77, 77, 0.08) 100%)',
+                border: '2px solid rgba(0, 184, 169, 0.2)',
+                boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)'
               }}
             >
-              <div className="text-4xl md:text-5xl font-bold mb-2" style={{ color: '#00B8A9' }}>
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-50/40 to-cyan-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative text-4xl md:text-5xl font-bold mb-2 transition-all duration-300 group-hover:scale-110" style={{ color: '#00B8A9' }}>
                 {stat.number}
               </div>
               <p className="text-sm" style={{ color: '#2D2D2D' }}>{stat.label}</p>
@@ -118,15 +121,16 @@ export default function OurTeamPage() {
             {leadership.map((leader, index) => (
               <div
                 key={index}
-                className="p-8 rounded-3xl text-center transition-all duration-500 hover:-translate-y-4 group"
+                className="relative p-8 rounded-3xl text-center transition-all duration-500 hover:-translate-y-4 group overflow-hidden"
                 style={{
                   background: '#FFFFFF',
-                  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.08)',
-                  border: '1px solid rgba(0, 184, 169, 0.1)'
+                  boxShadow: '0 10px 40px rgba(0, 0, 0, 0.06)',
+                  border: '1px solid rgba(0, 184, 169, 0.15)'
                 }}
               >
-                <div className="absolute top-0 left-0 w-full h-2 rounded-t-3xl" style={{ background: 'linear-gradient(90deg, #00B8A9 0%, #FF8C42 100%)' }}></div>
-                <div className="w-24 h-24 mx-auto mb-6 rounded-full flex items-center justify-center text-2xl font-bold text-white transition-transform duration-300 group-hover:scale-110" style={{ background: 'linear-gradient(135deg, #1A4D4D 0%, #00B8A9 100%)' }}>
+                <div className="absolute top-0 left-0 w-full h-2 rounded-t-3xl transition-all duration-300 group-hover:h-3" style={{ background: 'linear-gradient(90deg, #00B8A9 0%, #FF8C42 100%)', boxShadow: '0 2px 10px rgba(0, 184, 169, 0.3)' }}></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-teal-50/0 via-teal-50/30 to-teal-50/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative w-24 h-24 mx-auto mb-6 rounded-full flex items-center justify-center text-2xl font-bold text-white transition-all duration-300 group-hover:scale-110 shadow-xl" style={{ background: 'linear-gradient(135deg, #1A4D4D 0%, #00B8A9 100%)' }}>
                   {leader.name.split(' ').map(n => n[0]).join('')}
                 </div>
                 <h3 className="text-xl font-bold mb-2" style={{ color: '#1A4D4D' }}>
@@ -159,14 +163,15 @@ export default function OurTeamPage() {
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className="p-6 rounded-2xl text-center transition-all duration-300 hover:-translate-y-2"
+              className="p-6 rounded-2xl text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl group relative overflow-hidden"
               style={{
                 background: '#FFFFFF',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)',
+                boxShadow: '0 6px 30px rgba(0, 0, 0, 0.06)',
                 border: '1px solid rgba(0, 184, 169, 0.1)'
               }}
             >
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center text-lg font-bold text-white" style={{ background: `linear-gradient(135deg, ${index % 2 === 0 ? '#00B8A9' : '#FF8C42'} 0%, #1A4D4D 100%)` }}>
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent to-teal-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center text-lg font-bold text-white shadow-lg transition-all duration-300 group-hover:scale-110" style={{ background: `linear-gradient(135deg, ${index % 2 === 0 ? '#00B8A9' : '#FF8C42'} 0%, #1A4D4D 100%)` }}>
                 {member.name.split(' ').map(n => n[0]).join('')}
               </div>
               <h3 className="font-bold mb-1" style={{ color: '#1A4D4D' }}>
@@ -199,14 +204,15 @@ export default function OurTeamPage() {
             {advisors.map((advisor, index) => (
               <div
                 key={index}
-                className="p-8 rounded-3xl text-center transition-all duration-300 hover:-translate-y-2"
+                className="p-8 rounded-3xl text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl group relative overflow-hidden"
                 style={{
                   background: '#FFFFFF',
-                  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.08)',
+                  boxShadow: '0 10px 40px rgba(0, 0, 0, 0.06)',
                   border: '1px solid rgba(255, 140, 66, 0.2)'
                 }}
               >
-                <div className="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center text-xl font-bold text-white" style={{ background: 'linear-gradient(135deg, #FF8C42 0%, #1A4D4D 100%)' }}>
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-50/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center text-xl font-bold text-white shadow-xl transition-all duration-300 group-hover:scale-110" style={{ background: 'linear-gradient(135deg, #FF8C42 0%, #1A4D4D 100%)' }}>
                   {advisor.name.split(' ').map(n => n[0]).join('')}
                 </div>
                 <h3 className="text-lg font-bold mb-2" style={{ color: '#1A4D4D' }}>

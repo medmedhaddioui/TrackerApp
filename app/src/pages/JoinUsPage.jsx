@@ -84,14 +84,15 @@ export default function JoinUsPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="relative overflow-hidden py-32" style={{ background: 'linear-gradient(135deg, #FF8C42 0%, #00B8A9 100%)' }}>
+      <div className="relative overflow-hidden py-32" style={{ background: 'linear-gradient(135deg, #FF8C42 0%, #00B8A9 50%, #1A4D4D 100%)' }}>
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-30" style={{ background: 'radial-gradient(circle, #1A4D4D 0%, transparent 70%)', filter: 'blur(100px)' }}></div>
-          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full opacity-30" style={{ background: 'radial-gradient(circle, #FFFFFF 0%, transparent 70%)', filter: 'blur(100px)' }}></div>
+          <div className="absolute top-0 right-0 w-[800px] h-[800px] rounded-full opacity-20 animate-pulse" style={{ background: 'radial-gradient(circle, #FFB88C 0%, transparent 70%)', filter: 'blur(120px)', animation: 'pulse 8s ease-in-out infinite' }}></div>
+          <div className="absolute bottom-0 left-0 w-[800px] h-[800px] rounded-full opacity-20" style={{ background: 'radial-gradient(circle, #FFFFFF 0%, transparent 70%)', filter: 'blur(120px)', animation: 'pulse 8s ease-in-out infinite 4s' }}></div>
+          <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] rounded-full opacity-10" style={{ background: 'radial-gradient(circle, #00B8A9 0%, transparent 70%)', filter: 'blur(100px)', transform: 'translate(-50%, -50%)', animation: 'pulse 6s ease-in-out infinite 2s' }}></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full mb-8 backdrop-blur-xl" style={{ background: 'rgba(255, 255, 255, 0.2)', border: '1px solid rgba(255, 255, 255, 0.3)' }}>
+          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full mb-8 backdrop-blur-xl shadow-2xl" style={{ background: 'rgba(255, 255, 255, 0.15)', border: '1px solid rgba(255, 255, 255, 0.3)', boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.3)' }}>
             <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
@@ -107,13 +108,13 @@ export default function JoinUsPage() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#open-roles" className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-105" style={{ backgroundColor: '#FFFFFF', color: '#FF8C42', boxShadow: '0 10px 30px rgba(255, 255, 255, 0.3)' }}>
+            <a href="#open-roles" className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl group" style={{ backgroundColor: '#FFFFFF', color: '#FF8C42', boxShadow: '0 10px 40px rgba(255, 255, 255, 0.4)' }}>
               <span>See Open Roles</span>
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
               </svg>
             </a>
-            <Link to="/about/mission" className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-105 text-white" style={{ border: '2px solid rgba(255, 255, 255, 0.5)' }}>
+            <Link to="/about/mission" className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-105 text-white backdrop-blur-sm" style={{ border: '2px solid rgba(255, 255, 255, 0.5)', background: 'rgba(255, 255, 255, 0.1)', boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)' }}>
               Our Mission
             </Link>
           </div>
@@ -173,14 +174,15 @@ export default function JoinUsPage() {
             {values.map((value, index) => (
               <div
                 key={index}
-                className="p-8 rounded-3xl transition-all duration-300 hover:-translate-y-2"
+                className="p-8 rounded-3xl transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl group relative overflow-hidden"
                 style={{
                   background: '#FFFFFF',
-                  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.08)',
+                  boxShadow: '0 10px 40px rgba(0, 0, 0, 0.06)',
                   border: '1px solid rgba(0, 184, 169, 0.1)'
                 }}
               >
-                <div className="w-12 h-12 rounded-xl mb-6 flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #FF8C42 0%, #00B8A9 100%)' }}>
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-teal-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative w-14 h-14 rounded-2xl mb-6 flex items-center justify-center shadow-lg" style={{ background: 'linear-gradient(135deg, #FF8C42 0%, #00B8A9 100%)' }}>
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
@@ -218,13 +220,15 @@ export default function JoinUsPage() {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="p-8 rounded-3xl transition-all duration-500 hover:-translate-y-4 group"
+              className="p-8 rounded-3xl transition-all duration-500 hover:-translate-y-4 group relative overflow-hidden"
               style={{
-                background: 'linear-gradient(135deg, rgba(255, 140, 66, 0.05) 0%, rgba(0, 184, 169, 0.05) 100%)',
-                border: '1px solid rgba(255, 140, 66, 0.2)'
+                background: 'linear-gradient(135deg, rgba(255, 140, 66, 0.03) 0%, rgba(0, 184, 169, 0.03) 100%)',
+                border: '1px solid rgba(255, 140, 66, 0.2)',
+                boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)'
               }}
             >
-              <div className="w-16 h-16 rounded-2xl mb-6 flex items-center justify-center text-white transition-transform duration-300 group-hover:scale-110" style={{ background: 'linear-gradient(135deg, #FF8C42 0%, #00B8A9 100%)' }}>
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-50/30 to-teal-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative w-16 h-16 rounded-2xl mb-6 flex items-center justify-center text-white transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 shadow-lg" style={{ background: 'linear-gradient(135deg, #FF8C42 0%, #00B8A9 100%)' }}>
                 {benefit.icon}
               </div>
               <h3 className="text-xl font-bold mb-4" style={{ color: '#1A4D4D' }}>
@@ -252,9 +256,9 @@ export default function JoinUsPage() {
 
           <div className="flex flex-col md:flex-row gap-4 justify-between">
             {hiringSteps.map((step, index) => (
-              <div key={index} className="flex-1 relative">
-                <div className="text-center p-6">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center text-2xl font-bold text-white" style={{ background: 'linear-gradient(135deg, #00B8A9 0%, #1A4D4D 100%)' }}>
+              <div key={index} className="flex-1 relative group">
+                <div className="text-center p-6 transition-all duration-300 hover:-translate-y-2">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center text-2xl font-bold text-white shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl" style={{ background: 'linear-gradient(135deg, #00B8A9 0%, #1A4D4D 100%)' }}>
                     {step.step}
                   </div>
                   <h3 className="font-bold mb-2" style={{ color: '#1A4D4D' }}>{step.title}</h3>

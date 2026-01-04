@@ -39,10 +39,11 @@ export default function OurMissionPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="relative overflow-hidden py-32" style={{ background: 'linear-gradient(135deg, #0A2A2A 0%, #1A4D4D 50%, #00B8A9 100%)' }}>
+      <div className="relative overflow-hidden py-32" style={{ background: 'linear-gradient(135deg, #0A2A2A 0%, #1A4D4D 40%, #00B8A9 80%, #1A4D4D 100%)' }}>
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-30" style={{ background: 'radial-gradient(circle, #FF8C42 0%, transparent 70%)', filter: 'blur(100px)' }}></div>
-          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full opacity-30" style={{ background: 'radial-gradient(circle, #00B8A9 0%, transparent 70%)', filter: 'blur(100px)' }}></div>
+          <div className="absolute top-0 right-0 w-[900px] h-[900px] rounded-full opacity-25" style={{ background: 'radial-gradient(circle, #FF8C42 0%, transparent 70%)', filter: 'blur(120px)', animation: 'pulse 10s ease-in-out infinite' }}></div>
+          <div className="absolute bottom-0 left-0 w-[900px] h-[900px] rounded-full opacity-25" style={{ background: 'radial-gradient(circle, #00B8A9 0%, transparent 70%)', filter: 'blur(120px)', animation: 'pulse 10s ease-in-out infinite 5s' }}></div>
+          <div className="absolute top-1/3 left-1/3 w-[700px] h-[700px] rounded-full opacity-15" style={{ background: 'radial-gradient(circle, #FFB88C 0%, transparent 70%)', filter: 'blur(100px)', animation: 'pulse 8s ease-in-out infinite 3s' }}></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -131,14 +132,15 @@ export default function OurMissionPage() {
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="relative p-10 rounded-3xl text-center transition-all duration-300 hover:-translate-y-2"
+                className="relative p-10 rounded-3xl text-center transition-all duration-500 hover:-translate-y-4 hover:shadow-2xl group overflow-hidden"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(0, 184, 169, 0.1) 0%, rgba(26, 77, 77, 0.1) 100%)',
+                  background: 'linear-gradient(135deg, rgba(0, 184, 169, 0.08) 0%, rgba(26, 77, 77, 0.08) 100%)',
                   border: '2px solid rgba(0, 184, 169, 0.2)',
-                  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)'
+                  boxShadow: '0 10px 40px rgba(0, 0, 0, 0.06)'
                 }}
               >
-                <div className="text-5xl md:text-6xl font-bold mb-4" style={{ color: '#00B8A9' }}>
+                <div className="absolute inset-0 bg-gradient-to-br from-teal-50/40 to-cyan-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative text-5xl md:text-6xl font-bold mb-4 transition-all duration-300 group-hover:scale-110" style={{ color: '#00B8A9' }}>
                   {stat.number}
                 </div>
                 <h3 className="text-2xl font-bold mb-2" style={{ color: '#1A4D4D' }}>
@@ -168,14 +170,15 @@ export default function OurMissionPage() {
           {investors.map((investor, index) => (
             <div
               key={index}
-              className="p-6 rounded-2xl text-center transition-all duration-300 hover:-translate-y-2"
+              className="p-6 rounded-2xl text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl group relative overflow-hidden"
               style={{
                 background: '#FFFFFF',
                 border: '1px solid rgba(0, 184, 169, 0.2)',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)'
+                boxShadow: '0 6px 30px rgba(0, 0, 0, 0.06)'
               }}
             >
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #1A4D4D 0%, #00B8A9 100%)' }}>
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-50/0 to-teal-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-110" style={{ background: 'linear-gradient(135deg, #1A4D4D 0%, #00B8A9 100%)' }}>
                 <span className="text-white font-bold text-xl">{investor.name.charAt(0)}</span>
               </div>
               <h3 className="font-bold" style={{ color: '#1A4D4D' }}>{investor.name}</h3>
@@ -198,16 +201,17 @@ export default function OurMissionPage() {
             {leaders.map((leader, index) => (
               <div
                 key={index}
-                className="p-8 rounded-3xl transition-all duration-300 hover:-translate-y-1"
+                className="p-8 rounded-3xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl group relative overflow-hidden"
                 style={{
                   background: '#FFFFFF',
-                  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.08)',
-                  border: '1px solid rgba(0, 184, 169, 0.1)'
+                  boxShadow: '0 10px 40px rgba(0, 0, 0, 0.06)',
+                  border: '1px solid rgba(0, 184, 169, 0.15)'
                 }}
               >
-                <div className="flex flex-col md:flex-row gap-8 items-start">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-teal-50/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="flex flex-col md:flex-row gap-8 items-start relative">
                   <div className="flex-shrink-0">
-                    <div className="w-20 h-20 rounded-full flex items-center justify-center text-2xl font-bold text-white" style={{ background: 'linear-gradient(135deg, #00B8A9 0%, #1A4D4D 100%)' }}>
+                    <div className="w-20 h-20 rounded-full flex items-center justify-center text-2xl font-bold text-white shadow-xl transition-all duration-300 group-hover:scale-110" style={{ background: 'linear-gradient(135deg, #00B8A9 0%, #1A4D4D 100%)' }}>
                       {leader.name.split(' ').map(n => n[0]).join('')}
                     </div>
                   </div>

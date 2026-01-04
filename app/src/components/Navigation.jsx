@@ -116,7 +116,6 @@ export function Navigation() {
                 </div>
               )}
             </div>
-            <Link to="/resources" className="transition" style={{color: '#2D2D2D'}} onMouseOver={(e) => e.target.style.color = '#00B8A9'} onMouseOut={(e) => e.target.style.color = '#2D2D2D'}>Resources</Link>
             <div className="relative group">
               <button 
                 onMouseEnter={() => setDropdown('about')}
@@ -189,7 +188,6 @@ export function Navigation() {
               <a href="/interns#experiences" className="block py-2 transition" style={{color: '#2D2D2D'}} onMouseOver={(e) => e.target.style.color = '#00B8A9'} onMouseOut={(e) => e.target.style.color = '#2D2D2D'} onClick={() => setMenuOpen(false)}>Experiences</a>
               <a href="/interns#faqs" className="block py-2 transition" style={{color: '#2D2D2D'}} onMouseOver={(e) => e.target.style.color = '#00B8A9'} onMouseOut={(e) => e.target.style.color = '#2D2D2D'} onClick={() => setMenuOpen(false)}>FAQs</a>
             </div>
-            <Link to="/resources" className="block py-2 transition" style={{color: '#2D2D2D'}} onMouseOver={(e) => e.target.style.color = '#00B8A9'} onMouseOut={(e) => e.target.style.color = '#2D2D2D'} onClick={() => setMenuOpen(false)}>Resources</Link>
             <div className="pl-4">
               <p className="py-2 font-semibold" style={{color: '#1A4D4D'}}>About Us</p>
               <Link to="/about/mission" className="block py-2 transition" style={{color: '#2D2D2D'}} onMouseOver={(e) => e.target.style.color = '#00B8A9'} onMouseOut={(e) => e.target.style.color = '#2D2D2D'} onClick={() => setMenuOpen(false)}>Our Mission</Link>
