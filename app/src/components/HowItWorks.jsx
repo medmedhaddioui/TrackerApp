@@ -2,23 +2,23 @@ export function HowItWorks() {
   const steps = [
     {
       number: '01',
-      title: 'Create Your Account',
-      description: 'Sign up with your email in under 2 minutes. No credit card required. Set up your profile and get ready to personalize your news experience.'
+      title: 'Create Your Profile',
+      description: 'Sign up as an intern, company, or educator. Complete your profile with your goals, skills, and interests to get matched with the perfect opportunities.'
     },
     {
       number: '02',
-      title: 'Select Your Topics',
-      description: 'Choose the news categories you want to follow—gold prices, political updates, tech news, sports, or any topic you care about. Add as many as you like.'
+      title: 'Browse & Match',
+      description: 'Explore thousands of internship opportunities across 80+ countries. Our platform matches you with positions that align with your career goals and interests.'
     },
     {
       number: '03',
-      title: 'Let AI Work',
-      description: 'Our AI automatically scans thousands of sources daily, filtering and curating the most relevant news based on your selections. No manual searching required.'
+      title: 'Start Your Internship',
+      description: 'Get onboarded with your host company and begin working on real projects. Receive guidance from industry mentors and develop valuable professional skills.'
     },
     {
       number: '04',
-      title: 'Get Daily Updates',
-      description: 'Every day, access your personalized news page with fresh, curated updates. Stay informed effortlessly and never miss what matters to you.'
+      title: 'Build Your Career',
+      description: 'Complete your internship, earn certifications, and build your professional network. Leverage your experience to land your dream job or continue growing.'
     }
   ];
 

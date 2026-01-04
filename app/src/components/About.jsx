@@ -1,9 +1,9 @@
 export function About() {
   const stats = [
-    { value: '50,000+', label: 'Active Users' },
-    { value: '500+', label: 'News Categories' },
-    { value: '24/7', label: 'Auto Updates' },
-    { value: '100%', label: 'Personalized' }
+    { value: '250k+', label: 'Global Internships' },
+    { value: '80+', label: 'Countries' },
+    { value: '95%', label: 'Intern Satisfaction' },
+    { value: '1 in 3', label: 'Interns Hired' }
   ];
 
   return (
@@ -11,19 +11,19 @@ export function About() {
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About AI Daily News</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">The Future of Work is Changing. Are You Ready?</h2>
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
-                AI Daily News is an intelligent news aggregation platform that lets you choose the type of news you want to follow daily. Instead of spending time searching Google every day, our AI automatically collects and displays the most relevant updates based on your interests.
+                As AI technology reshapes industries, work-based learning is more essential than ever. Real-world experience not only empowers learners but also equips employers with fresh talent ready to drive innovation.
               </p>
               <p>
-                For example, a trader can select gold prices and related market updates to receive them automatically every day. A policy enthusiast may choose to follow political news about their country. A tech professional might track AI developments and software updates.
+                We connect educators, companies, and interns to create lasting, meaningful impact. Our platform provides access to remote, pre-vetted interns for companies, helps educators seamlessly embed internships into their curriculum, and enables interns to launch their careers with global experience.
               </p>
               <p>
-                Each day, our application generates a dedicated personalized page with fresh updates based on your selected interests. You interact with the app once, set your preferences, and get curated news delivered to you daily without the hassle of manual searching.
+                With over 250,000 global internships available across 80+ countries, we're building the world's largest network of meaningful work experiences. Our interns gain valuable skills and professional connections while companies get access to motivated talent ready to contribute.
               </p>
               <p>
-                What makes us different is our AI-powered curation combined with complete personalization. We don't just show you everything—we learn what matters to you and deliver exactly that, saving you time and keeping you informed effortlessly.
+                What makes us different is our proven track record: 95% intern satisfaction rate and 1 in 3 interns hired post-program completion. We're not just offering internships—we're shaping tomorrow's workforce, one internship at a time.
               </p>
             </div>
           </div>

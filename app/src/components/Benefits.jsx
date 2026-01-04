@@ -1,40 +1,40 @@
 export function Benefits() {
   const benefits = [
     {
-      category: 'Time Savings',
-      title: 'Save Hours Daily',
-      description: 'Stop wasting time browsing multiple news sites and searching Google. Our AI does the work for you, delivering curated updates in minutes instead of hours.',
-      stat: '3+ hours saved daily'
+      category: 'For Interns',
+      title: 'Launch Your Career',
+      description: 'Gain global work experience, develop valuable professional skills, and build meaningful connections that open doors to future opportunities.',
+      stat: '95% satisfaction rate'
     },
     {
-      category: 'Personalization',
-      title: 'Your News, Your Way',
-      description: 'Complete control over what you see. Whether you\'re tracking gold prices, political updates, or tech trends—get exactly what matters to you, nothing else.',
-      stat: '100% customized'
+      category: 'For Companies',
+      title: 'Access Top Talent',
+      description: 'Connect with pre-vetted, motivated interns ready to contribute to your business. Build your future talent pipeline with remote team members.',
+      stat: 'Pre-vetted interns'
     },
     {
-      category: 'Stay Informed',
-      title: 'Never Miss Updates',
-      description: 'Get daily automated updates on all your chosen topics. Stay ahead with real-time news aggregation that works 24/7 to keep you informed.',
-      stat: 'Real-time updates'
+      category: 'For Educators',
+      title: 'Enhance Curriculum',
+      description: 'Seamlessly integrate real-world internships into your programs. Improve student employability and prepare graduates for the modern workforce.',
+      stat: '80+ countries'
     },
     {
-      category: 'Convenience',
-      title: 'All In One Place',
-      description: 'Track multiple topics from one dashboard. Traders, professionals, enthusiasts—everyone gets their personalized news hub without juggling multiple sources.',
-      stat: 'Unlimited topics'
+      category: 'Global Reach',
+      title: 'Work From Anywhere',
+      description: 'Remote internships mean no geographical barriers. Access opportunities worldwide and work with international companies from your location.',
+      stat: '250k+ internships'
     },
     {
-      category: 'Smart Filtering',
-      title: 'Quality Over Quantity',
-      description: 'Our AI filters out noise and irrelevant content, showing you only the most important and relevant updates. Get informed, not overwhelmed.',
-      stat: '95% relevance rate'
+      category: 'Career Growth',
+      title: 'Real-World Skills',
+      description: 'Develop essential career skills through hands-on projects. Learn from industry professionals and gain experience that employers value.',
+      stat: 'Industry mentorship'
     },
     {
-      category: 'Easy Access',
-      title: 'Effortless Daily Routine',
-      description: 'Set your preferences once, then simply check your personalized page daily. No searching, no scrolling—just the news you need, automatically delivered.',
-      stat: 'Set once, use forever'
+      category: 'High Success Rate',
+      title: 'Get Hired',
+      description: 'Our program leads to real results. 1 in 3 interns receive job offers upon completion, turning internships into career opportunities.',
+      stat: '1 in 3 hired'
     }
   ];
 
@@ -42,8 +42,8 @@ export function Benefits() {
     <section className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What You'll Gain</h2>
-          <p className="text-xl text-gray-600">Real benefits from smart news aggregation</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Proven Results: Global Impact</h2>
+          <p className="text-xl text-gray-600">Real outcomes for interns, companies, and educators worldwide</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

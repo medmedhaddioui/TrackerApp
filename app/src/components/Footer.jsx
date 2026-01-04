@@ -5,9 +5,9 @@ export function Footer({ scrollToSection }) {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
-              AI Daily News
+              Virtual Internships
             </div>
-            <p className="text-sm">Empowering careers through world-class education</p>
+            <p className="text-sm">Shaping tomorrow's workforce: one internship at a time</p>
           </div>
 
           <div>
@@ -21,12 +21,22 @@ export function Footer({ scrollToSection }) {
           </div>
 
           <div>
-            <h4 className="font-semibold text-white mb-4">Resources</h4>
+            <h4 className="font-semibold text-white mb-4">For You</h4>
             <ul className="space-y-2">
+              <li><a href="#" className="hover:text-white transition">Interns: Apply</a></li>
+              <li><a href="#" className="hover:text-white transition">Companies: Hire</a></li>
+              <li><a href="#" className="hover:text-white transition">Educators: Partner</a></li>
+              <li><button onClick={() => scrollToSection('contact')} className="hover:text-white transition">Contact Us</button></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold text-white mb-4">About</h4>
+            <ul className="space-y-2">
+              <li><a href="#" className="hover:text-white transition">Our Mission</a></li>
+              <li><a href="#" className="hover:text-white transition">Our Team</a></li>
+              <li><a href="#" className="hover:text-white transition">Success Stories</a></li>
               <li><a href="#" className="hover:text-white transition">Blog</a></li>
-              <li><a href="#" className="hover:text-white transition">FAQ</a></li>
-              <li><a href="#" className="hover:text-white transition">Help Center</a></li>
-              <li><a href="#" className="hover:text-white transition">Career Services</a></li>
             </ul>
           </div>
 
@@ -41,7 +51,7 @@ export function Footer({ scrollToSection }) {
         </div>
 
         <div className="border-t border-gray-800 pt-8 text-center text-sm">
-          <p>&copy; 2026 AI Daily News. All rights reserved.</p>
+          <p>&copy; 2026 Virtual Internships. All rights reserved.</p>
         </div>
       </div>
     </footer>
