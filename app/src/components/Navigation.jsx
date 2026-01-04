@@ -42,12 +42,12 @@ export function Navigation() {
                   <Link to="/companies" className="block px-4 py-2 transition" style={{color: '#2D2D2D'}} onMouseOver={(e) => {e.currentTarget.style.backgroundColor = '#00B8A9'; e.currentTarget.style.color = '#FFFFFF';}} onMouseOut={(e) => {e.currentTarget.style.backgroundColor = ''; e.currentTarget.style.color = '#2D2D2D';}}>
                     Host an Intern
                   </Link>
-                  <a href="/companies#how-it-works" className="block px-4 py-2 transition" style={{color: '#2D2D2D'}} onMouseOver={(e) => {e.currentTarget.style.backgroundColor = '#00B8A9'; e.currentTarget.style.color = '#FFFFFF';}} onMouseOut={(e) => {e.currentTarget.style.backgroundColor = ''; e.currentTarget.style.color = '#2D2D2D';}}>
+                  <Link to="/companies" onClick={() => setTimeout(() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' }), 100)} className="block px-4 py-2 transition" style={{color: '#2D2D2D'}} onMouseOver={(e) => {e.currentTarget.style.backgroundColor = '#00B8A9'; e.currentTarget.style.color = '#FFFFFF';}} onMouseOut={(e) => {e.currentTarget.style.backgroundColor = ''; e.currentTarget.style.color = '#2D2D2D';}}>
                     How It Works
-                  </a>
-                  <a href="/companies#faqs" className="block px-4 py-2 transition" style={{color: '#2D2D2D'}} onMouseOver={(e) => {e.currentTarget.style.backgroundColor = '#00B8A9'; e.currentTarget.style.color = '#FFFFFF';}} onMouseOut={(e) => {e.currentTarget.style.backgroundColor = ''; e.currentTarget.style.color = '#2D2D2D';}}>
+                  </Link>
+                  <Link to="/companies" onClick={() => setTimeout(() => document.getElementById('faqs')?.scrollIntoView({ behavior: 'smooth' }), 100)} className="block px-4 py-2 transition" style={{color: '#2D2D2D'}} onMouseOver={(e) => {e.currentTarget.style.backgroundColor = '#00B8A9'; e.currentTarget.style.color = '#FFFFFF';}} onMouseOut={(e) => {e.currentTarget.style.backgroundColor = ''; e.currentTarget.style.color = '#2D2D2D';}}>
                     FAQs
-                  </a>
+                  </Link>
                 </div>
               )}
             </div>
@@ -117,7 +117,34 @@ export function Navigation() {
               )}
             </div>
             <Link to="/resources" className="transition" style={{color: '#2D2D2D'}} onMouseOver={(e) => e.target.style.color = '#00B8A9'} onMouseOut={(e) => e.target.style.color = '#2D2D2D'}>Resources</Link>
-            <Link to="/about" className="transition" style={{color: '#2D2D2D'}} onMouseOver={(e) => e.target.style.color = '#00B8A9'} onMouseOut={(e) => e.target.style.color = '#2D2D2D'}>About Us</Link>
+            <div className="relative group">
+              <button 
+                onMouseEnter={() => setDropdown('about')}
+                className="transition flex items-center gap-1"
+                style={{color: '#2D2D2D'}}
+                onMouseOver={(e) => e.target.style.color = '#00B8A9'}
+                onMouseOut={(e) => e.target.style.color = '#2D2D2D'}
+              >
+                About Us <span className="text-xs">▾</span>
+              </button>
+              {dropdown === 'about' && (
+                <div 
+                  onMouseEnter={() => setDropdown('about')}
+                  onMouseLeave={() => setDropdown(null)}
+                  className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl py-2 border border-gray-100"
+                >
+                  <Link to="/about/mission" className="block px-4 py-2 transition" style={{color: '#2D2D2D'}} onMouseOver={(e) => {e.currentTarget.style.backgroundColor = '#00B8A9'; e.currentTarget.style.color = '#FFFFFF';}} onMouseOut={(e) => {e.currentTarget.style.backgroundColor = ''; e.currentTarget.style.color = '#2D2D2D';}}>
+                    Our Mission
+                  </Link>
+                  <Link to="/about/team" className="block px-4 py-2 transition" style={{color: '#2D2D2D'}} onMouseOver={(e) => {e.currentTarget.style.backgroundColor = '#00B8A9'; e.currentTarget.style.color = '#FFFFFF';}} onMouseOut={(e) => {e.currentTarget.style.backgroundColor = ''; e.currentTarget.style.color = '#2D2D2D';}}>
+                    Our Team
+                  </Link>
+                  <Link to="/about/join-us" className="block px-4 py-2 transition" style={{color: '#2D2D2D'}} onMouseOver={(e) => {e.currentTarget.style.backgroundColor = '#00B8A9'; e.currentTarget.style.color = '#FFFFFF';}} onMouseOut={(e) => {e.currentTarget.style.backgroundColor = ''; e.currentTarget.style.color = '#2D2D2D';}}>
+                    Join Us
+                  </Link>
+                </div>
+              )}
+            </div>
             <Link to="/" className="text-white px-6 py-2 rounded-lg font-semibold transition" style={{backgroundColor: '#FF8C42'}} onMouseOver={(e) => e.target.style.backgroundColor = '#F7931E'} onMouseOut={(e) => e.target.style.backgroundColor = '#FF8C42'}>
               Get Started
             </Link>
@@ -144,8 +171,8 @@ export function Navigation() {
             <div className="pl-4">
               <p className="py-2 font-semibold" style={{color: '#1A4D4D'}}>Companies</p>
               <Link to="/companies" className="block py-2 transition" style={{color: '#2D2D2D'}} onMouseOver={(e) => e.target.style.color = '#00B8A9'} onMouseOut={(e) => e.target.style.color = '#2D2D2D'} onClick={() => setMenuOpen(false)}>Host an Intern</Link>
-              <a href="/companies#how-it-works" className="block py-2 transition" style={{color: '#2D2D2D'}} onMouseOver={(e) => e.target.style.color = '#00B8A9'} onMouseOut={(e) => e.target.style.color = '#2D2D2D'} onClick={() => setMenuOpen(false)}>How It Works</a>
-              <a href="/companies#faqs" className="block py-2 transition" style={{color: '#2D2D2D'}} onMouseOver={(e) => e.target.style.color = '#00B8A9'} onMouseOut={(e) => e.target.style.color = '#2D2D2D'} onClick={() => setMenuOpen(false)}>FAQs</a>
+              <Link to="/companies" className="block py-2 transition" style={{color: '#2D2D2D'}} onMouseOver={(e) => e.target.style.color = '#00B8A9'} onMouseOut={(e) => e.target.style.color = '#2D2D2D'} onClick={() => { setMenuOpen(false); setTimeout(() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' }), 100); }}>How It Works</Link>
+              <Link to="/companies" className="block py-2 transition" style={{color: '#2D2D2D'}} onMouseOver={(e) => e.target.style.color = '#00B8A9'} onMouseOut={(e) => e.target.style.color = '#2D2D2D'} onClick={() => { setMenuOpen(false); setTimeout(() => document.getElementById('faqs')?.scrollIntoView({ behavior: 'smooth' }), 100); }}>FAQs</Link>
             </div>
             <div className="pl-4">
               <p className="py-2 font-semibold" style={{color: '#1A4D4D'}}>Educators</p>
@@ -163,7 +190,12 @@ export function Navigation() {
               <a href="/interns#faqs" className="block py-2 transition" style={{color: '#2D2D2D'}} onMouseOver={(e) => e.target.style.color = '#00B8A9'} onMouseOut={(e) => e.target.style.color = '#2D2D2D'} onClick={() => setMenuOpen(false)}>FAQs</a>
             </div>
             <Link to="/resources" className="block py-2 transition" style={{color: '#2D2D2D'}} onMouseOver={(e) => e.target.style.color = '#00B8A9'} onMouseOut={(e) => e.target.style.color = '#2D2D2D'} onClick={() => setMenuOpen(false)}>Resources</Link>
-            <Link to="/about" className="block py-2 transition" style={{color: '#2D2D2D'}} onMouseOver={(e) => e.target.style.color = '#00B8A9'} onMouseOut={(e) => e.target.style.color = '#2D2D2D'} onClick={() => setMenuOpen(false)}>About Us</Link>
+            <div className="pl-4">
+              <p className="py-2 font-semibold" style={{color: '#1A4D4D'}}>About Us</p>
+              <Link to="/about/mission" className="block py-2 transition" style={{color: '#2D2D2D'}} onMouseOver={(e) => e.target.style.color = '#00B8A9'} onMouseOut={(e) => e.target.style.color = '#2D2D2D'} onClick={() => setMenuOpen(false)}>Our Mission</Link>
+              <Link to="/about/team" className="block py-2 transition" style={{color: '#2D2D2D'}} onMouseOver={(e) => e.target.style.color = '#00B8A9'} onMouseOut={(e) => e.target.style.color = '#2D2D2D'} onClick={() => setMenuOpen(false)}>Our Team</Link>
+              <Link to="/about/join-us" className="block py-2 transition" style={{color: '#2D2D2D'}} onMouseOver={(e) => e.target.style.color = '#00B8A9'} onMouseOut={(e) => e.target.style.color = '#2D2D2D'} onClick={() => setMenuOpen(false)}>Join Us</Link>
+            </div>
           </div>
         )}
       </div>

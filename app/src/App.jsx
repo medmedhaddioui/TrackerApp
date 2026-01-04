@@ -9,6 +9,9 @@ import BootcampsPage from './pages/BootcampsPage';
 import GovernmentsPage from './pages/GovernmentsPage';
 import AffiliatesPage from './pages/AffiliatesPage';
 import InternsPage from './pages/InternsPage';
+import OurMissionPage from './pages/OurMissionPage';
+import OurTeamPage from './pages/OurTeamPage';
+import JoinUsPage from './pages/JoinUsPage';
 
 export default function App() {
     const scrollToSection = (id) => {
@@ -31,6 +34,9 @@ export default function App() {
           <Route path="/educators/governments" element={<GovernmentsPage />} />
           <Route path="/educators/affiliates" element={<AffiliatesPage />} />
           <Route path="/interns" element={<InternsPage />} />
+          <Route path="/about/mission" element={<OurMissionPage />} />
+          <Route path="/about/team" element={<OurTeamPage />} />
+          <Route path="/about/join-us" element={<JoinUsPage />} />
         </Routes>
         <Footer  scrollToSection={scrollToSection} />
       </div>
