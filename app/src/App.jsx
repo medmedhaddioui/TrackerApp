@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
+import { ScrollToTop } from './components/ScrollToTop';
 import HomePage from './pages/HomePage';
 import CompaniesPage from './pages/CompaniesPage';
 import EducatorsPage from './pages/EducatorsPage';
@@ -14,31 +15,25 @@ import OurTeamPage from './pages/OurTeamPage';
 import JoinUsPage from './pages/JoinUsPage';
 
 export default function App() {
-    const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
   return (
-    
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen bg-white">
         <Navigation />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/companies" element={<CompaniesPage />} />
           <Route path="/educators" element={<EducatorsPage />} />
-          <Route path="/educators/universities" element={<UniversitiesPage />} />
-          <Route path="/educators/bootcamps" element={<BootcampsPage />} />
-          <Route path="/educators/governments" element={<GovernmentsPage />} />
-          <Route path="/educators/affiliates" element={<AffiliatesPage />} />
+          <Route path="/universities" element={<UniversitiesPage />} />
+          <Route path="/bootcamps" element={<BootcampsPage />} />
+          <Route path="/governments" element={<GovernmentsPage />} />
+          <Route path="/affiliates" element={<AffiliatesPage />} />
           <Route path="/interns" element={<InternsPage />} />
-          <Route path="/about/mission" element={<OurMissionPage />} />
-          <Route path="/about/team" element={<OurTeamPage />} />
-          <Route path="/about/join-us" element={<JoinUsPage />} />
+          <Route path="/our-mission" element={<OurMissionPage />} />
+          <Route path="/our-team" element={<OurTeamPage />} />
+          <Route path="/join-us" element={<JoinUsPage />} />
         </Routes>
-        <Footer  scrollToSection={scrollToSection} />
+        <Footer />
       </div>
     </Router>
   );

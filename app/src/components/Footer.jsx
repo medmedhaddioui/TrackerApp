@@ -1,4 +1,6 @@
-export function Footer({scrollToSection}) {
+import { Link } from 'react-router-dom';
+
+export function Footer() {
   return (
     <footer className="relative py-12 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0A2A2A 0%, #1A4D4D 50%, #00B8A9 100%)' }}>
       {/* Decorative background elements */}
@@ -19,39 +21,39 @@ export function Footer({scrollToSection}) {
           <div>
             <h4 className="font-semibold text-white mb-4">Quick Links</h4>
             <ul className="space-y-2 text-white/70">
-              <li><button onClick={() => scrollToSection('hero')} className="hover:text-white transition">Home</button></li>
-              <li><button onClick={() => scrollToSection('programs')} className="hover:text-white transition">Programs</button></li>
-              <li><button onClick={() => scrollToSection('about')} className="hover:text-white transition">About</button></li>
-              <li><button onClick={() => scrollToSection('contact')} className="hover:text-white transition">Contact</button></li>
+              <li><Link to="/" className="hover:text-white transition">Home</Link></li>
+              <li><Link to="/interns" className="hover:text-white transition">For Interns</Link></li>
+              <li><Link to="/companies" className="hover:text-white transition">For Companies</Link></li>
+              <li><Link to="/our-mission" className="hover:text-white transition">About Us</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold text-white mb-4">For You</h4>
             <ul className="space-y-2 text-white/70">
-              <li><a href="#" className="hover:text-white transition">Interns: Apply</a></li>
-              <li><a href="#" className="hover:text-white transition">Companies: Hire</a></li>
-              <li><a href="#" className="hover:text-white transition">Educators: Partner</a></li>
-              <li><button onClick={() => scrollToSection('contact')} className="hover:text-white transition">Contact Us</button></li>
+              <li><Link to="/interns" className="hover:text-white transition">Interns: Apply</Link></li>
+              <li><Link to="/companies" className="hover:text-white transition">Companies: Hire</Link></li>
+              <li><Link to="/educators" className="hover:text-white transition">Educators: Partner</Link></li>
+              <li><Link to="/join-us" className="hover:text-white transition">Join Our Team</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold text-white mb-4">About</h4>
             <ul className="space-y-2 text-white/70">
-              <li><a href="#" className="hover:text-white transition">Our Mission</a></li>
-              <li><a href="#" className="hover:text-white transition">Our Team</a></li>
-              <li><a href="#" className="hover:text-white transition">Success Stories</a></li>
-              <li><a href="#" className="hover:text-white transition">Blog</a></li>
+              <li><Link to="/our-mission" className="hover:text-white transition">Our Mission</Link></li>
+              <li><Link to="/our-team" className="hover:text-white transition">Our Team</Link></li>
+              <li><Link to="/bootcamps" className="hover:text-white transition">Bootcamps</Link></li>
+              <li><Link to="/universities" className="hover:text-white transition">Universities</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold text-white mb-4">Legal</h4>
             <ul className="space-y-2 text-white/70">
-              <li><a href="#" className="hover:text-white transition">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-white transition">Terms of Service</a></li>
-              <li><a href="#" className="hover:text-white transition">Cookie Policy</a></li>
+              <li><a href="#privacy" className="hover:text-white transition">Privacy Policy</a></li>
+              <li><a href="#terms" className="hover:text-white transition">Terms of Service</a></li>
+              <li><a href="#cookies" className="hover:text-white transition">Cookie Policy</a></li>
             </ul>
           </div>
         </div>
