@@ -64,34 +64,43 @@ export function Programs() {
   ];
 
   return (
-    <section id="programs" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <section id="programs" className="py-24 px-4 sm:px-6 lg:px-8" style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, rgba(255,140,66,0.03) 50%, #FFFFFF 100%)' }}>
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Internship Categories</h2>
-          <p className="text-xl text-gray-600">Explore opportunities across diverse industries</p>
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#1A4D4D' }}>Internship Categories</h2>
+          <p className="text-xl md:text-2xl font-light max-w-3xl mx-auto" style={{ color: '#2D2D2D' }}>Explore opportunities across diverse industries</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {programs.map((program, index) => (
-            <div key={index} className={`bg-white p-6 rounded-xl shadow-sm hover:shadow-xl transition-all ${program.popular ? 'border-2 border-blue-500 relative' : 'border border-gray-200'}`}>
+            <div key={index} className="group relative bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden">
               {program.popular && (
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                <div className="absolute -top-0 -right-0 px-6 py-2 rounded-bl-3xl text-sm font-bold text-white" style={{ backgroundColor: '#FF8C42', boxShadow: '0 4px 20px rgba(255,140,66,0.3)' }}>
                   Most Popular
                 </div>
               )}
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">{program.title}</h3>
-              <p className="text-gray-600 mb-4 leading-relaxed">{program.description}</p>
-              <ul className="space-y-2 mb-6">
-                {program.highlights.map((item, i) => (
-                  <li key={i} className="text-sm text-gray-600 flex items-start">
-                    <span className="text-blue-500 mr-2">•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <button className="w-full py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg transform hover:-translate-y-0.5 transition-all">
-                Apply Now
-              </button>
+              <div className="absolute top-0 left-0 w-full h-2" style={{ background: program.popular ? 'linear-gradient(90deg, #FF8C42 0%, #00B8A9 100%)' : '#00B8A9' }}></div>
+              <div className="absolute top-0 right-0 w-32 h-32 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-3xl -z-0" style={{ backgroundColor: program.popular ? 'rgba(255,140,66,0.2)' : 'rgba(0,184,169,0.2)' }}></div>
+              
+              <div className="relative pt-4">
+                <h3 className="text-2xl font-bold mb-4" style={{ color: '#1A4D4D' }}>{program.title}</h3>
+                <p className="mb-6 leading-relaxed text-base" style={{ color: '#2D2D2D', opacity: 0.9 }}>{program.description}</p>
+                <div className="space-y-3 mb-8">
+                  {program.highlights.map((item, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div className="flex-shrink-0 w-6 h-6 rounded-lg flex items-center justify-center" style={{ backgroundColor: 'rgba(0,184,169,0.15)' }}>
+                        <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#00B8A9' }}></div>
+                      </div>
+                      <span className="text-sm font-medium" style={{ color: '#2D2D2D' }}>{item}</span>
+                    </div>
+                  ))}
+                </div>
+                <button className="w-full py-4 text-white rounded-xl font-bold hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group">
+                  <span className="relative z-10">Apply Now</span>
+                  <div className="absolute inset-0 transition-all duration-300" style={{ backgroundColor: '#00B8A9' }}></div>
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: 'linear-gradient(45deg, rgba(255,255,255,0.2) 0%, transparent 100%)' }}></div>
+                </button>
+              </div>
             </div>
           ))}
         </div>

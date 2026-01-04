@@ -3,69 +3,95 @@ export function HowItWorks() {
     {
       number: '01',
       title: 'Create Your Profile',
-      description: 'Sign up as an intern, company, or educator. Complete your profile with your goals, skills, and interests to get matched with the perfect opportunities.'
+      description: 'Sign up as an intern, company, or educator. Complete your profile with your goals, skills, and interests to get matched with the perfect opportunities.',
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+        </svg>
+      )
     },
     {
       number: '02',
       title: 'Browse & Match',
-      description: 'Explore thousands of internship opportunities across 80+ countries. Our platform matches you with positions that align with your career goals and interests.'
+      description: 'Explore thousands of internship opportunities across 80+ countries. Our platform matches you with positions that align with your career goals and interests.',
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      )
     },
     {
       number: '03',
       title: 'Start Your Internship',
-      description: 'Get onboarded with your host company and begin working on real projects. Receive guidance from industry mentors and develop valuable professional skills.'
+      description: 'Get onboarded with your host company and begin working on real projects. Receive guidance from industry mentors and develop valuable professional skills.',
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      )
     },
     {
       number: '04',
       title: 'Build Your Career',
-      description: 'Complete your internship, earn certifications, and build your professional network. Leverage your experience to land your dream job or continue growing.'
+      description: 'Complete your internship, earn certifications, and build your professional network. Leverage your experience to land your dream job or continue growing.',
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+        </svg>
+      )
     }
   ];
 
   return (
-    <section id="how-it-works" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <div className="inline-block px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
-            Simple Process
+    <section id="how-it-works" className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ background: 'linear-gradient(135deg, #1A4D4D 0%, #0A2A2A 100%)' }}>
+      {/* Background decorations */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-20" style={{ background: 'radial-gradient(circle, #00B8A9 0%, transparent 70%)', filter: 'blur(100px)' }}></div>
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full opacity-20" style={{ background: 'radial-gradient(circle, #FF8C42 0%, transparent 70%)', filter: 'blur(100px)' }}></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full mb-6 backdrop-blur-xl" style={{ background: 'rgba(255, 255, 255, 0.1)', border: '1px solid rgba(255, 255, 255, 0.2)' }}>
+            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+            </svg>
+            <span className="font-semibold text-sm text-white">Simple Process</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">How It Works</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">Get started in four simple steps</p>
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white">How It Works</h2>
+          <p className="text-xl md:text-2xl font-light max-w-2xl mx-auto text-white/80">Get started in four simple steps</p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {steps.map((step, index) => (
-            <div key={index} className="relative">
-              <div className="group bg-white p-8 rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 h-full border border-gray-100 hover:border-blue-200">
-                {/* Step number badge */}
-                <div className="relative inline-flex items-center justify-center mb-6">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl opacity-10 group-hover:opacity-20 transition-opacity"></div>
-                  <div className="relative text-6xl font-bold bg-gradient-to-br from-blue-600 to-purple-600 bg-clip-text text-transparent px-4 py-2">
-                    {step.number}
+        <div className="relative">
+          {/* Progress line */}
+          <div className="hidden lg:block absolute top-40 left-0 right-0 h-1 -z-0" style={{ background: 'linear-gradient(90deg, #00B8A9 0%, #FF8C42 100%)', opacity: 0.3 }}></div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+            {steps.map((step, index) => (
+              <div key={index} className="relative">
+                <div className="group bg-white/10 backdrop-blur-xl p-8 rounded-3xl hover:bg-white/15 transition-all duration-500 h-full transform hover:-translate-y-4 border border-white/10 hover:border-white/20" style={{ boxShadow: '0 20px 40px rgba(0, 0, 0, 0.2)' }}>
+                  {/* Step number circle */}
+                  <div className="relative inline-flex items-center justify-center mb-8">
+                    <div className="absolute inset-0 rounded-full blur-xl opacity-50 group-hover:opacity-70 transition-opacity" style={{ backgroundColor: index % 2 === 0 ? '#00B8A9' : '#FF8C42' }}></div>
+                    <div className="relative w-20 h-20 rounded-2xl flex items-center justify-center" style={{ background: `linear-gradient(135deg, ${index % 2 === 0 ? '#00B8A9' : '#FF8C42'} 0%, ${index % 2 === 0 ? '#1A4D4D' : '#FF6B2B'} 100%)` }}>
+                      <span className="text-white">{step.icon}</span>
+                    </div>
                   </div>
+                  
+                  <div className="text-sm font-bold mb-3" style={{ color: index % 2 === 0 ? '#00B8A9' : '#FF8C42' }}>
+                    Step {step.number}
+                  </div>
+                  
+                  <h3 className="text-2xl font-bold mb-4 text-white">
+                    {step.title}
+                  </h3>
+                  <p className="leading-relaxed text-base text-white/70">
+                    {step.description}
+                  </p>
                 </div>
-                
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-                  {step.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {step.description}
-                </p>
-
-                {/* Decorative corner gradient */}
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
-              
-              {/* Arrow connector between steps */}
-              {index < steps.length - 1 && (
-                <div className="hidden lg:flex absolute top-1/2 -right-3 z-10 items-center justify-center">
-                  <svg className="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </div>
-              )}
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
