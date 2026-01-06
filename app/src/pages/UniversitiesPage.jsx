@@ -118,7 +118,7 @@ export default function UniversitiesPage() {
               </p>
               
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-                <Link to="/contact" className="group flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-500 hover:-translate-y-1 text-white" style={{ background: 'linear-gradient(135deg, #FF8C42 0%, #FF6B2B 100%)', boxShadow: '0 20px 40px rgba(255, 140, 66, 0.4)' }}>
+                <Link to="/universities/contact" className="group flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-500 hover:-translate-y-1 text-white" style={{ background: 'linear-gradient(135deg, #FF8C42 0%, #FF6B2B 100%)', boxShadow: '0 20px 40px rgba(255, 140, 66, 0.4)' }}>
                   <span>Book a Demo</span>
                   <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -401,7 +401,7 @@ export default function UniversitiesPage() {
           <p className="text-xl mb-10 text-white/90">
             Join 300+ universities providing guaranteed internships to their students
           </p>
-          <Link to="/contact" className="inline-flex items-center gap-3 px-10 py-5 bg-white rounded-2xl font-bold text-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300" style={{ color: '#FF8C42' }}>
+          <Link to="/universities/contact" className="inline-flex items-center gap-3 px-10 py-5 bg-white rounded-2xl font-bold text-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300" style={{ color: '#FF8C42' }}>
             <span>Schedule a Demo</span>
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />

@@ -123,7 +123,7 @@ export default function AffiliatesPage() {
               </p>
               
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-                <Link to="/contact" className="group flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl" style={{ backgroundColor: '#1A4D4D', color: '#FFFFFF' }}>
+                <Link to="/educators/contact" className="group flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl" style={{ backgroundColor: '#1A4D4D', color: '#FFFFFF' }}>
                   <span>Become a Partner</span>
                   <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -342,7 +342,7 @@ export default function AffiliatesPage() {
           <p className="text-xl mb-10 text-white/90">
             Join our affiliate program today and turn your network into opportunity
           </p>
-          <Link to="/contact" className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl font-bold text-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300" style={{ backgroundColor: '#1A4D4D', color: '#FFFFFF' }}>
+          <Link to="/educators/contact" className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl font-bold text-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300" style={{ backgroundColor: '#1A4D4D', color: '#FFFFFF' }}>
             <span>Apply Now</span>
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />

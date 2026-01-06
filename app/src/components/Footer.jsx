@@ -10,15 +10,15 @@ export function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
-          <div>
+        <div className="grid md:grid-cols-5 gap-8 mb-8">
+          <div >
             <div className="text-2xl font-bold mb-4" style={{ background: 'linear-gradient(135deg, #FF8C42 0%, #FFB88C 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
               PraktikaX
             </div>
             <p className="text-sm text-white/70">Shaping tomorrow's workforce: one internship at a time</p>
           </div>
 
-          <div>
+          <div className='ms-16'>
             <h4 className="font-semibold text-white mb-4">Quick Links</h4>
             <ul className="space-y-2 text-white/70">
               <li><Link to="/" className="hover:text-white transition">Home</Link></li>
@@ -28,7 +28,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className='ms-16'>
             <h4 className="font-semibold text-white mb-4">For You</h4>
             <ul className="space-y-2 text-white/70">
               <li><Link to="/interns" className="hover:text-white transition">Interns: Apply</Link></li>
@@ -38,7 +38,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className='ms-16'>
             <h4 className="font-semibold text-white mb-4">About</h4>
             <ul className="space-y-2 text-white/70">
               <li><Link to="/our-mission" className="hover:text-white transition">Our Mission</Link></li>
@@ -48,7 +48,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className='ms-16'>
             <h4 className="font-semibold text-white mb-4">Legal</h4>
             <ul className="space-y-2 text-white/70">
               <li><a href="#privacy" className="hover:text-white transition">Privacy Policy</a></li>

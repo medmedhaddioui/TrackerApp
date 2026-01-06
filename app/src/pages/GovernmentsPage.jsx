@@ -117,7 +117,7 @@ export default function GovernmentsPage() {
               </p>
               
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-                <Link to="/contact" className="group flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-500 hover:-translate-y-1" style={{ backgroundColor: '#FF8C42', color: '#FFFFFF', boxShadow: '0 20px 40px rgba(255, 140, 66, 0.4)' }}>
+                <Link to="/educators/contact" className="group flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-500 hover:-translate-y-1" style={{ backgroundColor: '#FF8C42', color: '#FFFFFF', boxShadow: '0 20px 40px rgba(255, 140, 66, 0.4)' }}>
                   <span>Find Out More</span>
                   <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -330,7 +330,7 @@ export default function GovernmentsPage() {
           <p className="text-xl mb-10 text-white/80">
             Partner with us to address skills gaps and unemployment at scale
           </p>
-          <Link to="/contact" className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl font-bold text-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300" style={{ backgroundColor: '#FF8C42', color: '#FFFFFF' }}>
+          <Link to="/educators/contact" className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl font-bold text-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300" style={{ backgroundColor: '#FF8C42', color: '#FFFFFF' }}>
             <span>Get in Touch</span>
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />

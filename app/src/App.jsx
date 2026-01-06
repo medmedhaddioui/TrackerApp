@@ -13,6 +13,7 @@ import InternsPage from './pages/InternsPage';
 import OurMissionPage from './pages/OurMissionPage';
 import OurTeamPage from './pages/OurTeamPage';
 import JoinUsPage from './pages/JoinUsPage';
+import ContactPage from './pages/ContactPage';
 
 export default function App() {
   return (
@@ -39,6 +40,9 @@ export default function App() {
           <Route path="/about/team" element={<OurTeamPage />} />
           <Route path="/join-us" element={<JoinUsPage />} />
           <Route path="/about/join-us" element={<JoinUsPage />} />
+          <Route path="/companies/contact" element={<ContactPage />} />
+          <Route path="/educators/contact" element={<ContactPage />} />
+          <Route path="/universities/contact" element={<ContactPage />} />
         </Routes>
         <Footer />
       </div>

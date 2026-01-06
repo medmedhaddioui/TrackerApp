@@ -528,9 +528,11 @@ export default function CompaniesPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </button>
+            <Link to="/companies/contact">
             <button className="px-10 py-5 rounded-2xl font-bold text-xl text-white transition-all duration-300 hover:-translate-y-1" style={{ border: '2px solid rgba(255,255,255,0.5)', backgroundColor: 'rgba(255,255,255,0.1)' }}>
               Schedule a Call
             </button>
+            </Link>
           </div>
         </div>
       </section>
