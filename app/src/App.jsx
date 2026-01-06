@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Navigation } from './components/Navigation';
+import { Navigation } from './shared/Navigation';
 import { Footer } from './components/Footer';
-import { ScrollToTop } from './components/ScrollToTop';
+import { ScrollToTop } from './shared/ScrollToTop';
 import HomePage from './pages/HomePage';
 import CompaniesPage from './pages/CompaniesPage';
 import EducatorsPage from './pages/EducatorsPage';

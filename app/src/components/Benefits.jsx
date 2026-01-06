@@ -69,7 +69,7 @@ export function Benefits() {
   ];
 
   return (
-    <section className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, rgba(0,184,169,0.05) 50%, #FFFFFF 100%)' }}>
+    <section id="benefits" className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, rgba(0,184,169,0.05) 50%, #FFFFFF 100%)' }}>
       {/* Background decorations */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-10" style={{ background: 'radial-gradient(circle, #00B8A9 0%, transparent 70%)', filter: 'blur(80px)' }}></div>
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full opacity-10" style={{ background: 'radial-gradient(circle, #FF8C42 0%, transparent 70%)', filter: 'blur(80px)' }}></div>

@@ -1,4 +1,8 @@
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
+
 export function Programs() {
+  const [titleRef, titleVisible] = useScrollAnimation({ threshold: 0.2 });
+  
   const programs = [
     {
       title: 'Business & Finance',
@@ -66,14 +70,21 @@ export function Programs() {
   return (
     <section id="programs" className="py-24 px-4 sm:px-6 lg:px-8" style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, rgba(255,140,66,0.03) 50%, #FFFFFF 100%)' }}>
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-20">
+        <div 
+          ref={titleRef}
+          className={`text-center mb-20 transition-all duration-700 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+        >
           <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: '#1A4D4D' }}>Internship Categories</h2>
           <p className="text-xl md:text-2xl font-light max-w-3xl mx-auto" style={{ color: '#2D2D2D' }}>Explore opportunities across diverse industries</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {programs.map((program, index) => (
-            <div key={index} className="group relative bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden">
+            <div 
+              key={index} 
+              className="card-hover group relative bg-white p-8 rounded-3xl shadow-lg overflow-hidden opacity-0 animate-fade-in-up"
+              style={{ animationDelay: `${index * 0.1}s`, animationFillMode: 'forwards' }}
+            >
               {program.popular && (
                 <div className="absolute -top-0 -right-0 px-6 py-2 rounded-bl-3xl text-sm font-bold text-white" style={{ backgroundColor: '#FF8C42', boxShadow: '0 4px 20px rgba(255,140,66,0.3)' }}>
                   Most Popular

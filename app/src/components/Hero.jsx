@@ -33,13 +33,13 @@ export function Hero({ scrollToSection }) {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
-              <button className="group flex items-center justify-center gap-3 px-8 py-4 text-white rounded-2xl font-bold text-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-500" style={{ background: 'linear-gradient(135deg, #FF8C42 0%, #FF6B2B 100%)', boxShadow: '0 20px 40px rgba(255, 140, 66, 0.4)' }}>
+              <button className="group btn-primary flex items-center justify-center gap-3 px-8 py-4 text-white rounded-2xl font-bold text-lg">
                 <svg className="w-6 h-6 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
                 <span>Apply Now</span>
               </button>
-              <button onClick={() => scrollToSection('programs')} className="group flex items-center justify-center gap-3 px-8 py-4 rounded-2xl font-bold text-lg backdrop-blur-xl transition-all duration-500 hover:-translate-y-1" style={{ background: 'rgba(255, 255, 255, 0.1)', color: '#FFFFFF', border: '2px solid rgba(255, 255, 255, 0.3)' }}>
+              <button onClick={() => scrollToSection('programs')} className="group btn-secondary flex items-center justify-center gap-3 px-8 py-4 text-white rounded-2xl font-bold text-lg">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
