@@ -83,7 +83,7 @@ export default function OurTeamPage() {
             Our Remote-First Philosophy: Best Minds Anywhere
           </h2>
           <p className="text-xl max-w-3xl mx-auto" style={{ color: '#2D2D2D' }}>
-            At Virtual Internships, we believe that talent knows no boundaries. As a VC-backed, high-growth startup, we understand that having the right people onboard our mission is imperative to our success.
+            At PraktikaX, we believe that talent knows no boundaries. As a VC-backed, high-growth startup, we understand that having the right people onboard our mission is imperative to our success.
           </p>
         </div>
 
@@ -247,7 +247,7 @@ export default function OurTeamPage() {
               <Link to="/about/join-us" className="inline-block px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105" style={{ backgroundColor: '#FF8C42', color: '#FFFFFF', boxShadow: '0 10px 30px rgba(255, 140, 66, 0.3)' }}>
                 View Open Roles
               </Link>
-              <Link to="/about/mission" className="inline-block px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105" style={{ backgroundColor: '#FFFFFF', color: '#1A4D4D' }}>
+              <Link to="/about/our-mission" className="inline-block px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105" style={{ backgroundColor: '#FFFFFF', color: '#1A4D4D' }}>
                 Our Mission
               </Link>
             </div>

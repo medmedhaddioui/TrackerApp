@@ -13,7 +13,7 @@ export function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="text-2xl font-bold mb-4" style={{ background: 'linear-gradient(135deg, #FF8C42 0%, #FFB88C 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-              Virtual Internships
+              PraktikaX
             </div>
             <p className="text-sm text-white/70">Shaping tomorrow's workforce: one internship at a time</p>
           </div>

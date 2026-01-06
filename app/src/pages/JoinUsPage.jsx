@@ -104,7 +104,7 @@ export default function JoinUsPage() {
           </h1>
           
           <p className="text-lg md:text-xl mb-10 text-white/90 max-w-3xl mx-auto">
-            At Virtual Internships (VI), we're on a mission to make internships accessible to people all over the world, and we're hiring talent like you!
+            At PraktikaX (VI), we're on a mission to make internships accessible to people all over the world, and we're hiring talent like you!
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -114,7 +114,7 @@ export default function JoinUsPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
               </svg>
             </a>
-            <Link to="/about/mission" className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-105 text-white backdrop-blur-sm" style={{ border: '2px solid rgba(255, 255, 255, 0.5)', background: 'rgba(255, 255, 255, 0.1)', boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)' }}>
+            <Link to="/about/our-mission" className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-105 text-white backdrop-blur-sm" style={{ border: '2px solid rgba(255, 255, 255, 0.5)', background: 'rgba(255, 255, 255, 0.1)', boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)' }}>
               Our Mission
             </Link>
           </div>
@@ -151,7 +151,7 @@ export default function JoinUsPage() {
               <h3 className="text-2xl font-bold mb-4" style={{ color: '#1A4D4D' }}>VI-er</h3>
               <p className="text-lg italic mb-4" style={{ color: '#2D2D2D' }}>/vee-eye-er/</p>
               <p className="text-lg" style={{ color: '#2D2D2D' }}>
-                noun: A member of the Virtual Internships team. Someone who is passionate about making internships accessible to all.
+                noun: A member of the PraktikaX team. Someone who is passionate about making internships accessible to all.
               </p>
             </div>
           </div>
@@ -166,7 +166,7 @@ export default function JoinUsPage() {
               Why Choose VI?
             </h2>
             <p className="text-xl" style={{ color: '#2D2D2D' }}>
-              Discover our values and work ethic at Virtual Internships
+              Discover our values and work ethic at PraktikaX
             </p>
           </div>
 
@@ -295,7 +295,7 @@ export default function JoinUsPage() {
               <Link to="/about/team" className="inline-block px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105" style={{ backgroundColor: '#FFFFFF', color: '#FF8C42' }}>
                 Meet Our Team
               </Link>
-              <Link to="/about/mission" className="inline-block px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 text-white" style={{ border: '2px solid rgba(255, 255, 255, 0.5)' }}>
+              <Link to="/about/our-mission" className="inline-block px-10 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 text-white" style={{ border: '2px solid rgba(255, 255, 255, 0.5)' }}>
                 Our Mission
               </Link>
             </div>

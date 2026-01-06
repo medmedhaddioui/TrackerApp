@@ -1,24 +1,24 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, /* useNavigate */ } from "react-router-dom";
 
 export function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdown, setDropdown] = useState(null);
-  const navigate = useNavigate();
+  /* const navigate = useNavigate(); */
 
-  const scrollToSection = (id) => {
+  /* const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-  };
+  }; */
 
   return (
     <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="text-2xl font-bold" style={{color: '#1A4D4D'}}>
-            Virtual Internships
+            PraktikaX
           </Link>
           
           {/* Desktop Navigation */}
@@ -132,7 +132,7 @@ export function Navigation() {
                   onMouseLeave={() => setDropdown(null)}
                   className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl py-2 border border-gray-100"
                 >
-                  <Link to="/about/mission" className="block px-4 py-2 transition" style={{color: '#2D2D2D'}} onMouseOver={(e) => {e.currentTarget.style.backgroundColor = '#00B8A9'; e.currentTarget.style.color = '#FFFFFF';}} onMouseOut={(e) => {e.currentTarget.style.backgroundColor = ''; e.currentTarget.style.color = '#2D2D2D';}}>
+                  <Link to="/about/our-mission" className="block px-4 py-2 transition" style={{color: '#2D2D2D'}} onMouseOver={(e) => {e.currentTarget.style.backgroundColor = '#00B8A9'; e.currentTarget.style.color = '#FFFFFF';}} onMouseOut={(e) => {e.currentTarget.style.backgroundColor = ''; e.currentTarget.style.color = '#2D2D2D';}}>
                     Our Mission
                   </Link>
                   <Link to="/about/team" className="block px-4 py-2 transition" style={{color: '#2D2D2D'}} onMouseOver={(e) => {e.currentTarget.style.backgroundColor = '#00B8A9'; e.currentTarget.style.color = '#FFFFFF';}} onMouseOut={(e) => {e.currentTarget.style.backgroundColor = ''; e.currentTarget.style.color = '#2D2D2D';}}>

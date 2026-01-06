@@ -25,13 +25,20 @@ export default function App() {
           <Route path="/companies" element={<CompaniesPage />} />
           <Route path="/educators" element={<EducatorsPage />} />
           <Route path="/universities" element={<UniversitiesPage />} />
+          <Route path="/educators/universities" element={<UniversitiesPage />} />
           <Route path="/bootcamps" element={<BootcampsPage />} />
+          <Route path="/educators/bootcamps" element={<BootcampsPage />} />
           <Route path="/governments" element={<GovernmentsPage />} />
+          <Route path="/educators/governments" element={<GovernmentsPage />} />
           <Route path="/affiliates" element={<AffiliatesPage />} />
+          <Route path="/educators/affiliates" element={<AffiliatesPage />} />
           <Route path="/interns" element={<InternsPage />} />
           <Route path="/our-mission" element={<OurMissionPage />} />
+          <Route path="/about/our-mission" element={<OurMissionPage />} />
           <Route path="/our-team" element={<OurTeamPage />} />
+          <Route path="/about/team" element={<OurTeamPage />} />
           <Route path="/join-us" element={<JoinUsPage />} />
+          <Route path="/about/join-us" element={<JoinUsPage />} />
         </Routes>
         <Footer />
       </div>
