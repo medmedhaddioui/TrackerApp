@@ -5,6 +5,7 @@ import { Benefits } from '../components/Benefits';
 import { Programs } from '../components/Programs';
 import { About } from '../components/About';
 import { Contact } from '../components/Contact';
+import Partners from '../components/Partners';
 
 export default function HomePage() {
   const scrollToSection = (id) => {
@@ -22,7 +23,9 @@ export default function HomePage() {
       <Benefits />
       <Programs />
       <About />
+      <Partners/>
       <Contact />
+     
     </div>
   );
 }

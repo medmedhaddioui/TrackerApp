@@ -1,20 +1,29 @@
-import { useState } from "react";
-import { Link, /* useNavigate */ } from "react-router-dom";
+import { useState,useEffect } from "react";
+import { Link,  /*useNavigate */ } from "react-router-dom";
 
 export function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdown, setDropdown] = useState(null);
-  /* const navigate = useNavigate(); */
+  //  const navigate = useNavigate();
+   
+   useEffect(() => {
+  if (menuOpen) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+}, [menuOpen]);
 
-  /* const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  }; */
+  // const scrollToSection = (id) => {
+  //   const element = document.getElementById(id);
+  //   if (element) {
+  //     element.scrollIntoView({ behavior: 'smooth' });
+  //   }
+  // }; 
 
   return (
-    <nav className="fixed top-0 w-full backdrop-blur-glass z-50 border-b border-gray-100 transition-all duration-300">
+    <>
+    <nav className="fixed top-0 w-full backdrop-blur-glass z-[9999] border-b border-gray-100 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="text-2xl font-bold" style={{color: '#1A4D4D'}}>
@@ -181,48 +190,47 @@ export function Navigation() {
             </div>
           </button>
         </div>
-
-        {/* Mobile menu */}
-        {menuOpen && (
-          <div className="md:hidden pb-4 animate-fade-in">
-            <div className="pl-4">
-              <p className="py-2 font-semibold text-teal-800">Home</p>
-              <a href="/#about" className="block py-2 text-gray-800 hover:text-teal-600 transition-colors" onClick={() => setMenuOpen(false)}>About</a>
-              <a href="/#benefits" className="block py-2 text-gray-800 hover:text-teal-600 transition-colors" onClick={() => setMenuOpen(false)}>Benefits</a>
-              <a href="/#programs" className="block py-2 text-gray-800 hover:text-teal-600 transition-colors" onClick={() => setMenuOpen(false)}>Programs</a>
-              <a href="/#how-it-works" className="block py-2 text-gray-800 hover:text-teal-600 transition-colors" onClick={() => setMenuOpen(false)}>How It Works</a>
-              <a href="/#contact" className="block py-2 text-gray-800 hover:text-teal-600 transition-colors" onClick={() => setMenuOpen(false)}>Contact</a>
-            </div>
-            <div className="pl-4">
-              <p className="py-2 font-semibold text-teal-800">Companies</p>
-              <Link to="/companies" className="block py-2 text-gray-800 hover:text-teal-600 transition-colors" onClick={() => setMenuOpen(false)}>Host an Intern</Link>
-              <Link to="/companies" className="block py-2 text-gray-800 hover:text-teal-600 transition-colors" onClick={() => { setMenuOpen(false); setTimeout(() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' }), 100); }}>How It Works</Link>
-              <Link to="/companies" className="block py-2 text-gray-800 hover:text-teal-600 transition-colors" onClick={() => { setMenuOpen(false); setTimeout(() => document.getElementById('faqs')?.scrollIntoView({ behavior: 'smooth' }), 100); }}>FAQs</Link>
-            </div>
-            <div className="pl-4">
-              <p className="py-2 font-semibold text-teal-800">Educators</p>
-              <Link to="/educators/universities" className="block py-2 text-gray-800 hover:text-teal-600 transition-colors" onClick={() => setMenuOpen(false)}>Universities</Link>
-              <Link to="/educators/bootcamps" className="block py-2 text-gray-800 hover:text-teal-600 transition-colors" onClick={() => setMenuOpen(false)}>Bootcamps</Link>
-              <Link to="/educators/governments" className="block py-2 text-gray-800 hover:text-teal-600 transition-colors" onClick={() => setMenuOpen(false)}>Governments</Link>
-              <Link to="/educators/affiliates" className="block py-2 text-gray-800 hover:text-teal-600 transition-colors" onClick={() => setMenuOpen(false)}>Affiliates</Link>
-            </div>
-            <div className="pl-4">
-              <p className="py-2 font-semibold text-teal-800">Interns</p>
-              <Link to="/interns" className="block py-2 text-gray-800 hover:text-teal-600 transition-colors" onClick={() => setMenuOpen(false)}>Apply for Internships</Link>
-              <a href="/interns#how-it-works" className="block py-2 text-gray-800 hover:text-teal-600 transition-colors" onClick={() => setMenuOpen(false)}>How It Works</a>
-              <a href="/interns#career-fields" className="block py-2 text-gray-800 hover:text-teal-600 transition-colors" onClick={() => setMenuOpen(false)}>Career Fields</a>
-              <a href="/interns#experiences" className="block py-2 text-gray-800 hover:text-teal-600 transition-colors" onClick={() => setMenuOpen(false)}>Experiences</a>
-              <a href="/interns#faqs" className="block py-2 text-gray-800 hover:text-teal-600 transition-colors" onClick={() => setMenuOpen(false)}>FAQs</a>
-            </div>
-            <div className="pl-4">
-              <p className="py-2 font-semibold text-teal-800">About Us</p>
-              <Link to="/about/mission" className="block py-2 text-gray-800 hover:text-teal-600 transition-colors" onClick={() => setMenuOpen(false)}>Our Mission</Link>
-              <Link to="/about/team" className="block py-2 text-gray-800 hover:text-teal-600 transition-colors" onClick={() => setMenuOpen(false)}>Our Team</Link>
-              <Link to="/about/join-us" className="block py-2 text-gray-800 hover:text-teal-600 transition-colors" onClick={() => setMenuOpen(false)}>Join Us</Link>
-            </div>
-          </div>
-        )}
       </div>
     </nav>
+
+    {/* MOBILE MENU OUTSIDE NAV TO FIX STACKING CONTEXT */}
+    {menuOpen && (
+      <div className="fixed inset-0 top-16 bg-white z-[10000] overflow-y-auto md:hidden">
+        <div className="pl-4 pb-10">
+
+          <p className="py-2 font-semibold text-teal-800">Home</p>
+          <a href="/#about" className="block py-2" onClick={() => setMenuOpen(false)}>About</a>
+          <a href="/#benefits" className="block py-2" onClick={() => setMenuOpen(false)}>Benefits</a>
+          <a href="/#programs" className="block py-2" onClick={() => setMenuOpen(false)}>Programs</a>
+          <a href="/#how-it-works" className="block py-2" onClick={() => setMenuOpen(false)}>How It Works</a>
+          <a href="/#contact" className="block py-2" onClick={() => setMenuOpen(false)}>Contact</a>
+
+          <p className="py-2 font-semibold text-teal-800 mt-4">Companies</p>
+          <Link to="/companies" className="block py-2" onClick={() => setMenuOpen(false)}>Host an Intern</Link>
+          <Link to="/companies" className="block py-2" onClick={() => setMenuOpen(false)}>How It Works</Link>
+          <Link to="/companies" className="block py-2" onClick={() => setMenuOpen(false)}>FAQs</Link>
+
+          <p className="py-2 font-semibold text-teal-800 mt-4">Educators</p>
+          <Link to="/educators/universities" className="block py-2" onClick={() => setMenuOpen(false)}>Universities</Link>
+          <Link to="/educators/bootcamps" className="block py-2" onClick={() => setMenuOpen(false)}>Bootcamps</Link>
+          <Link to="/educators/governments" className="block py-2" onClick={() => setMenuOpen(false)}>Governments</Link>
+          <Link to="/educators/affiliates" className="block py-2" onClick={() => setMenuOpen(false)}>Affiliates</Link>
+
+          <p className="py-2 font-semibold text-teal-800 mt-4">Interns</p>
+          <Link to="/interns" className="block py-2" onClick={() => setMenuOpen(false)}>Apply for Internships</Link>
+          <a href="/interns#how-it-works" className="block py-2" onClick={() => setMenuOpen(false)}>How It Works</a>
+          <a href="/interns#career-fields" className="block py-2" onClick={() => setMenuOpen(false)}>Career Fields</a>
+          <a href="/interns#experiences" className="block py-2" onClick={() => setMenuOpen(false)}>Experiences</a>
+          <a href="/interns#faqs" className="block py-2" onClick={() => setMenuOpen(false)}>FAQs</a>
+
+          <p className="py-2 font-semibold text-teal-800 mt-4">About Us</p>
+          <Link to="/about/mission" className="block py-2" onClick={() => setMenuOpen(false)}>Our Mission</Link>
+          <Link to="/about/team" className="block py-2" onClick={() => setMenuOpen(false)}>Our Team</Link>
+          <Link to="/about/join-us" className="block py-2" onClick={() => setMenuOpen(false)}>Join Us</Link>
+
+        </div>
+      </div>
+    )}
+    </>
   );
 }

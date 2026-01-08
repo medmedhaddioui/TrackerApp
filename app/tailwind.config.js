@@ -53,7 +53,7 @@ export default {
       },
       backdropBlur: {
         'glass': '10px',
-      }
+      },
     },
   },
   plugins: [],
