@@ -88,71 +88,60 @@ export function Programs() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {programs.map((program, index) => {
-            // Alternate gradients: orange for even, green for odd
-            const isOrange = index % 2 === 0;
-            const gradientStyle = isOrange
-              ? { background: 'linear-gradient(70deg, #FF8C42 0%, rgba(255,140,66,0.6) 70%, transparent 100%)' }
-              : { background: 'linear-gradient(70deg, #00B875 0%, rgba(0,184,117,0.6) 60%, transparent 100%)' };
+  {programs.map((program, index) => (
+    <div
+      key={index}
+      className="bg-white rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-100"
+    >
+      {/* Image */}
+      <div className="relative">
+        <img
+          src={BackgroundImage[index]}
+          alt={program.title}
+          className="w-full h-48 object-cover"
+        />
 
-              const imageForCard=BackgroundImage[index];
+        {program.popular && (
+          <span className="absolute top-3 right-3 bg-white text-sm font-semibold px-3 py-1 rounded-full shadow">
+            Free Trial
+          </span>
+        )}
+      </div>
 
-            return (
-              <div 
-                key={index} 
-                className="card-hover group relative bg-white p-8 rounded-3xl shadow-lg overflow-hidden opacity-0 animate-fade-in-up"
-                style={{ animationDelay: `${index * 0.1}s`, animationFillMode: 'forwards' }}
-              >
-                {/* Background Image + Gradient */}
-                <div className="absolute inset-0 -z-10 overflow-hidden rounded-3xl">
-                  <img 
-                    src={imageForCard} 
-                    alt="background" 
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0" style={gradientStyle}></div>
-                </div>
-
-                {/* Popular Badge */}
-                {program.popular && (
-                  <div className="absolute -top-0 -right-0 px-6 py-2 rounded-bl-3xl text-sm font-bold text-white" style={{ backgroundColor: '#FF8C42', boxShadow: '0 4px 20px rgba(255,140,66,0.3)' }}>
-                    Most Popular
-                  </div>
-                )}
-
-                {/* Top Border */}
-                <div className="absolute top-0 left-0 w-full h-2" style={{ background: isOrange ? '#FF8C42' : '#00B875' }}></div>
-
-                {/* Hover Circle */}
-                <div className="absolute top-0 right-0 w-32 h-32 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-3xl -z-0" style={{ backgroundColor: isOrange ? 'rgba(255,140,66,0.2)' : 'rgba(0,184,117,0.2)' }}></div>
-
-                {/* Card Content */}
-                <div className="relative pt-4">
-                  <h3 className="text-2xl font-bold mb-4" style={{ color: '#1A4D4D' }}>{program.title}</h3>
-                  <p className="mb-6 leading-relaxed text-base" style={{ color: '#2D2D2D', opacity: 0.9 }}>{program.description}</p>
-
-                  <div className="space-y-3 mb-8">
-                    {program.highlights.map((item, i) => (
-                      <div key={i} className="flex items-center gap-3">
-                        <div className="flex-shrink-0 w-6 h-6 rounded-lg flex items-center justify-center" style={{ backgroundColor: isOrange ? 'rgba(255,140,66,0.15)' : 'rgba(0,184,117,0.15)' }}>
-                          <div className="w-2 h-2 rounded-full" style={{ backgroundColor: isOrange ? '#FF8C42' : '#00B875' }}></div>
-                        </div>
-                        <span className="text-sm font-medium" style={{ color: '#2D2D2D' }}>{item}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Apply Button */}
-                  <button className="w-full py-4 text-white rounded-xl font-bold hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group">
-                    <span className="relative z-10">Apply Now</span>
-                    <div className="absolute inset-0 transition-all duration-300" style={{ backgroundColor: isOrange ? '#FF8C42' : '#00B875' }}></div>
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: 'linear-gradient(45deg, rgba(255,255,255,0.2) 0%, transparent 100%)' }}></div>
-                  </button>
-                </div>
-              </div>
-            );
-          })}
+      {/* Content */}
+      <div className="p-6 space-y-4">
+        {/* Provider */}
+        <div className="text-sm font-semibold text-gray-600">
+          {program.provider || "IBM"}
         </div>
+
+        {/* Title */}
+        <h3 className="text-lg font-bold text-gray-900 leading-snug">
+          {program.title}
+        </h3>
+
+        {/* Skills */}
+        <p className="text-sm text-gray-600">
+          <span className="font-semibold">Skills you'll gain:</span>{" "}
+          {program.highlights.slice(0, 4).join(", ")}
+        </p>
+
+        {/* Rating */}
+        <div className="flex items-center gap-2 text-sm">
+          <span className="font-semibold text-gray-900">4.7</span>
+          <span className="text-yellow-500">★</span>
+          <span className="text-gray-500">(12K reviews)</span>
+        </div>
+
+        {/* Meta */}
+        <div className="text-sm text-gray-500">
+          Beginner · Professional Certificate · 3–6 Months
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+
       </div>
     </section>
   );
