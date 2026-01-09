@@ -77,15 +77,15 @@ export function Proposition () {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {values.map((value, index) => (
-            <div key={index} className="group relative p-8 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 overflow-hidden border border-gray-100">
+            <div key={index} className="group relative p-8 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 overflow-hidden border border-gray-100 card-animate">
               <div className="absolute top-0 left-0 w-1.5 h-full transition-all duration-500 group-hover:w-2" style={{ backgroundColor: index % 2 === 0 ? '#00B8A9' : '#FF8C42' }}></div>
               <div className="absolute top-0 right-0 w-32 h-32 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-3xl" style={{ backgroundColor: index % 2 === 0 ? 'rgba(0,184,169,0.2)' : 'rgba(255,140,66,0.2)' }}></div>
               <div className="relative">
-                <div className="w-16 h-16 rounded-2xl mb-6 flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-6" style={{ background: `linear-gradient(135deg, ${index % 2 === 0 ? '#00B8A9' : '#FF8C42'} 0%, ${index % 2 === 0 ? '#1A4D4D' : '#FF6B2B'} 100%)`, color: '#FFFFFF', boxShadow: `0 10px 30px ${index % 2 === 0 ? 'rgba(0,184,169,0.3)' : 'rgba(255,140,66,0.3)'}` }}>
+                <div className="w-16 h-16 rounded-2xl mb-6 flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 icon-animate" style={{ background: `linear-gradient(135deg, ${index % 2 === 0 ? '#00B8A9' : '#FF8C42'} 0%, ${index % 2 === 0 ? '#1A4D4D' : '#FF6B2B'} 100%)`, color: '#FFFFFF', boxShadow: `0 10px 30px ${index % 2 === 0 ? 'rgba(0,184,169,0.3)' : 'rgba(255,140,66,0.3)'}` }}>
                   {value.icon}
                 </div>
-                <h3 className="text-2xl font-bold mb-4" style={{ color: '#1A4D4D' }}>{value.title}</h3>
-                <p className="leading-relaxed text-base" style={{ color: '#2D2D2D', opacity: 0.9 }}>{value.description}</p>
+                <h3 className="text-2xl font-bold mb-4 transition-colors duration-300" style={{ color: '#1A4D4D' }}>{value.title}</h3>
+                <p className="leading-relaxed text-base transition-all duration-300" style={{ color: '#2D2D2D', opacity: 0.9 }}>{value.description}</p>
               </div>
             </div>
           ))}

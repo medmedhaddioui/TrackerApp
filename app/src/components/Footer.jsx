@@ -51,9 +51,9 @@ export function Footer() {
           <div className='ms-16'>
             <h4 className="font-semibold text-white mb-4">Legal</h4>
             <ul className="space-y-2 text-white/70">
-              <li><a href="#privacy" className="hover:text-white transition">Privacy Policy</a></li>
-              <li><a href="#terms" className="hover:text-white transition">Terms of Service</a></li>
-              <li><a href="#cookies" className="hover:text-white transition">Cookie Policy</a></li>
+              <li><span className="cursor-not-allowed opacity-50">Privacy Policy</span></li>
+              <li><span className="cursor-not-allowed opacity-50">Terms of Service</span></li>
+              <li><span className="cursor-not-allowed opacity-50">Cookie Policy</span></li>
             </ul>
           </div>
         </div>

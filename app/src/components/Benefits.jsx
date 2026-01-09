@@ -88,21 +88,21 @@ export function Benefits() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => (
-            <div key={index} className="group relative bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 overflow-hidden border border-gray-100">
+            <div key={index} className="group relative bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 overflow-hidden border border-gray-100 card-animate">
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: `linear-gradient(135deg, ${index % 2 === 0 ? 'rgba(0,184,169,0.05)' : 'rgba(255,140,66,0.05)'} 0%, transparent 100%)` }}></div>
               <div className="relative">
                 <div className="flex items-center justify-between mb-6">
                   <div className="inline-block px-4 py-2 rounded-full text-xs font-bold" style={{ backgroundColor: index % 2 === 0 ? 'rgba(0,184,169,0.15)' : 'rgba(255,140,66,0.15)', color: index % 2 === 0 ? '#00B8A9' : '#FF8C42' }}>
                     {benefit.category}
                   </div>
-                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-6" style={{ background: `linear-gradient(135deg, ${index % 2 === 0 ? '#00B8A9' : '#FF8C42'} 0%, ${index % 2 === 0 ? '#1A4D4D' : '#FF6B2B'} 100%)`, color: '#FFFFFF' }}>
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 icon-animate" style={{ background: `linear-gradient(135deg, ${index % 2 === 0 ? '#00B8A9' : '#FF8C42'} 0%, ${index % 2 === 0 ? '#1A4D4D' : '#FF6B2B'} 100%)`, color: '#FFFFFF' }}>
                     {benefit.icon}
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold mt-2 mb-4" style={{ color: '#1A4D4D' }}>{benefit.title}</h3>
-                <p className="mb-6 leading-relaxed text-base" style={{ color: '#2D2D2D', opacity: 0.9 }}>{benefit.description}</p>
+                <h3 className="text-2xl font-bold mt-2 mb-4 transition-colors duration-300" style={{ color: '#1A4D4D' }}>{benefit.title}</h3>
+                <p className="mb-6 leading-relaxed text-base transition-all duration-300" style={{ color: '#2D2D2D', opacity: 0.9 }}>{benefit.description}</p>
                 <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
-                  <div className="text-2xl font-bold" style={{ color: index % 2 === 0 ? '#00B8A9' : '#FF8C42' }}>
+                  <div className="text-2xl font-bold transition-transform duration-300 group-hover:scale-110" style={{ color: index % 2 === 0 ? '#00B8A9' : '#FF8C42' }}>
                     {benefit.stat}
                   </div>
                 </div>

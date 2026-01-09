@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function InternsPage() {
   const benefits = [
     { title: 'Complete Flexibility', description: 'You choose your start date, internship length, and weekly commitment of hours.', icon: (
@@ -146,13 +148,13 @@ export default function InternsPage() {
               </p>
               
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-                <a href="#" className="group relative flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-500 hover:-translate-y-1 hover:scale-105 overflow-hidden" style={{ background: 'linear-gradient(135deg, #FF8C42 0%, #FF6B2B 100%)', color: '#FFFFFF', boxShadow: '0 20px 40px rgba(255, 140, 66, 0.4)' }}>
+                <Link to="/interns" className="group relative flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-500 hover:-translate-y-1 hover:scale-105 overflow-hidden" style={{ background: 'linear-gradient(135deg, #FF8C42 0%, #FF6B2B 100%)', color: '#FFFFFF', boxShadow: '0 20px 40px rgba(255, 140, 66, 0.4)' }}>
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: 'linear-gradient(135deg, #FF6B2B 0%, #FF8C42 100%)' }}></div>
                   <span className="relative z-10">Enroll Now</span>
                   <svg className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
-                </a>
+                </Link>
                 <a href="#how-it-works" className="px-8 py-4 rounded-2xl font-bold text-lg backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:scale-105" style={{ background: 'rgba(255, 255, 255, 0.1)', color: '#FFFFFF', border: '2px solid rgba(255, 255, 255, 0.3)', boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)' }}>
                   How It Works
                 </a>
@@ -394,13 +396,13 @@ export default function InternsPage() {
           <p className="text-xl mb-10 text-white/80">
             Join our global network of successful alumni.
           </p>
-          <a href="#" className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-500 hover:scale-110 hover:shadow-2xl relative group overflow-hidden" style={{ background: 'linear-gradient(135deg, #FF8C42 0%, #FF6B2B 100%)', color: '#FFFFFF', boxShadow: '0 20px 60px rgba(255, 140, 66, 0.5)' }}>
+          <Link to="/interns" className="inline-flex items-center gap-3 px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-500 hover:scale-110 hover:shadow-2xl relative group overflow-hidden" style={{ background: 'linear-gradient(135deg, #FF8C42 0%, #FF6B2B 100%)', color: '#FFFFFF', boxShadow: '0 20px 60px rgba(255, 140, 66, 0.5)' }}>
             <div className="absolute inset-0 rounded-2xl animate-pulse" style={{ background: 'linear-gradient(135deg, #FF6B2B 0%, #FF8C42 100%)', opacity: 0 }}></div>
             <span className="relative z-10">Enroll Now</span>
             <svg className="relative z-10 w-6 h-6 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
-          </a>
+          </Link>
         </div>
       </section>
     </div>

@@ -31,7 +31,7 @@ export default function ContactPage() {
         setStatus('error');
       }
     } catch (error) {
-      setStatus(error);
+      setStatus('error');
     }
   };
 

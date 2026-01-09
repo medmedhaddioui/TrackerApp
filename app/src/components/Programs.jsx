@@ -91,37 +91,38 @@ export function Programs() {
   {programs.map((program, index) => (
     <div
       key={index}
-      className="bg-white rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-100"
+      className="bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-500 overflow-hidden border border-gray-100 card-animate group"
     >
       {/* Image */}
-      <div className="relative">
+      <div className="relative overflow-hidden">
         <img
           src={BackgroundImage[index]}
           alt={program.title}
-          className="w-full h-48 object-cover"
+          className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
         {program.popular && (
-          <span className="absolute top-3 right-3 bg-white text-sm font-semibold px-3 py-1 rounded-full shadow">
+          <span className="absolute top-3 right-3 bg-white text-sm font-semibold px-3 py-1 rounded-full shadow animate-bounce" style={{ animationDuration: '2s' }}>
             Free Trial
           </span>
         )}
       </div>
 
       {/* Content */}
-      <div className="p-6 space-y-4">
+      <div className="p-6 space-y-4 relative">
         {/* Provider */}
-        <div className="text-sm font-semibold text-gray-600">
+        <div className="text-sm font-semibold text-gray-600 transition-colors duration-300 group-hover:text-[#00B8A9]">
           {program.provider || "IBM"}
         </div>
 
         {/* Title */}
-        <h3 className="text-lg font-bold text-gray-900 leading-snug">
+        <h3 className="text-lg font-bold text-gray-900 leading-snug transition-colors duration-300 group-hover:text-[#1A4D4D]">
           {program.title}
         </h3>
 
         {/* Skills */}
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-gray-600 transition-all duration-300">
           <span className="font-semibold">Skills you'll gain:</span>{" "}
           {program.highlights.slice(0, 4).join(", ")}
         </p>
@@ -129,12 +130,12 @@ export function Programs() {
         {/* Rating */}
         <div className="flex items-center gap-2 text-sm">
           <span className="font-semibold text-gray-900">4.7</span>
-          <span className="text-yellow-500">★</span>
+          <span className="text-yellow-500 transition-transform duration-300 group-hover:scale-125">★</span>
           <span className="text-gray-500">(12K reviews)</span>
         </div>
 
         {/* Meta */}
-        <div className="text-sm text-gray-500">
+        <div className="text-sm text-gray-500 transition-colors duration-300 group-hover:text-gray-700">
           Beginner · Professional Certificate · 3–6 Months
         </div>
       </div>

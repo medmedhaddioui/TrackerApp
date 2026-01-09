@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link,  /*useNavigate */ } from "react-router-dom";
 
 export function Navigation() {
@@ -224,7 +224,7 @@ export function Navigation() {
           <a href="/interns#faqs" className="block py-2" onClick={() => setMenuOpen(false)}>FAQs</a>
 
           <p className="py-2 font-semibold text-teal-800 mt-4">About Us</p>
-          <Link to="/about/mission" className="block py-2" onClick={() => setMenuOpen(false)}>Our Mission</Link>
+          <Link to="/about/our-mission" className="block py-2" onClick={() => setMenuOpen(false)}>Our Mission</Link>
           <Link to="/about/team" className="block py-2" onClick={() => setMenuOpen(false)}>Our Team</Link>
           <Link to="/about/join-us" className="block py-2" onClick={() => setMenuOpen(false)}>Join Us</Link>
 
