@@ -27,8 +27,8 @@ const AnimatedSection = ({ children, delay = 0, className = '' }) => {
         });
       },
       {
-        threshold: 0.15, // Trigger when 15% visible
-        rootMargin: '0px 0px -80px 0px' // Start animation a bit before fully visible
+        threshold: 0.05, // Trigger earlier when only 5% visible
+        rootMargin: '100px 0px 100px 0px' // Start animation before entering viewport
       }
     );
 
@@ -46,7 +46,7 @@ const AnimatedSection = ({ children, delay = 0, className = '' }) => {
   return (
     <div
       ref={sectionRef}
-      className={`transform transition-all duration-[700ms] ease-out ${className} ${
+      className={`transform transition-all duration-[800ms] ease-out ${className} ${
         isVisible
           ? 'opacity-100 translate-y-0 scale-100'
           : 'opacity-0 translate-y-12 scale-95'

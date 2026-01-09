@@ -78,10 +78,8 @@ export function HowItWorks() {
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              // Card is visible - add to set
               setVisibleCards((prev) => new Set([...prev, index]));
             } else {
-              // Card is not visible - remove from set (enables reverse animation)
               setVisibleCards((prev) => {
                 const newSet = new Set(prev);
                 newSet.delete(index);
@@ -110,29 +108,29 @@ export function HowItWorks() {
   }, []);
 
   return (
-    <section id="how-it-works" className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ background: 'linear-gradient(135deg, #1A4D4D 0%, #0A2A2A 100%)' }}>
+    <section id="how-it-works" className="relative py-16 md:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ background: 'linear-gradient(135deg, #1A4D4D 0%, #0A2A2A 100%)' }}>
       {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-20" style={{ background: 'radial-gradient(circle, #00B8A9 0%, transparent 70%)', filter: 'blur(100px)' }}></div>
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full opacity-20" style={{ background: 'radial-gradient(circle, #FF8C42 0%, transparent 70%)', filter: 'blur(100px)' }}></div>
+        <div className="absolute top-0 right-0 w-[400px] md:w-[600px] h-[400px] md:h-[600px] rounded-full opacity-20" style={{ background: 'radial-gradient(circle, #00B8A9 0%, transparent 70%)', filter: 'blur(100px)' }}></div>
+        <div className="absolute bottom-0 left-0 w-[400px] md:w-[600px] h-[400px] md:h-[600px] rounded-full opacity-20" style={{ background: 'radial-gradient(circle, #FF8C42 0%, transparent 70%)', filter: 'blur(100px)' }}></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full mb-6 backdrop-blur-xl" style={{ background: 'rgba(255, 255, 255, 0.1)', border: '1px solid rgba(255, 255, 255, 0.2)' }}>
-            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="text-center mb-12 md:mb-20">
+          <div className="inline-flex items-center gap-2 px-4 md:px-6 py-2 md:py-3 rounded-full mb-4 md:mb-6 backdrop-blur-xl" style={{ background: 'rgba(255, 255, 255, 0.1)', border: '1px solid rgba(255, 255, 255, 0.2)' }}>
+            <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
             </svg>
-            <span className="font-semibold text-sm text-white">Simple Process</span>
+            <span className="font-semibold text-xs md:text-sm text-white">Simple Process</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white">How It Works</h2>
-          <p className="text-xl md:text-2xl font-light max-w-2xl mx-auto text-white/80">Get started in four simple steps</p>
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-white px-4">How It Works</h2>
+          <p className="text-lg md:text-xl lg:text-2xl font-light max-w-2xl mx-auto text-white/80 px-4">Get started in four simple steps</p>
         </div>
 
         <div ref={containerRef} className="relative">
-          {/* Center Progress Line */}
+          {/* Center Progress Line - Only on Desktop */}
           <div 
-            className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-white/20 hidden md:block"
+            className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-white/20 hidden lg:block"
             style={{ height: '100%', top: 0 }}
           >
             <div 
@@ -145,43 +143,56 @@ export function HowItWorks() {
           </div>
 
           {/* Timeline Steps */}
-          <div className="space-y-32">
+          <div className="space-y-12 md:space-y-20 lg:space-y-32">
             {steps.map((step, index) => {
               const isVisible = visibleCards.has(index);
 
               return (
-                <div key={index} className="relative min-h-[300px] flex items-center justify-center">
-                  {/* Card positioned next to progress bar */}
+                <div key={index} className="relative lg:min-h-[300px] flex items-center justify-center">
+                  {/* Card - Responsive positioning */}
                   <div
                     ref={(el) => (cardRefs.current[index] = el)}
-                    className={`absolute w-full md:w-5/12 transition-all duration-700 ease-out ${
-                      isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
-                    } ${step.side === 'left' ? 'right-1/2 pr-8' : 'left-1/2 pl-8'}`}
+                    className={`
+                      w-full lg:w-5/12 transition-all duration-700 ease-out
+                      ${isVisible ? 'opacity-100' : 'opacity-0'}
+                      
+                      /* Mobile: slide from left/right */
+                      ${isVisible 
+                        ? 'translate-x-0' 
+                        : step.side === 'left' ? '-translate-x-8' : 'translate-x-8'
+                      }
+                      
+                      /* Desktop: pop up from bottom + positioned next to timeline */
+                      lg:absolute
+                      ${isVisible ? 'lg:translate-y-0' : 'lg:translate-y-16'}
+                      ${isVisible ? 'lg:translate-x-0' : ''}
+                      ${step.side === 'left' ? 'lg:right-1/2 lg:pr-8' : 'lg:left-1/2 lg:pl-8'}
+                    `}
                   >
-                    <div className="group bg-white/10 backdrop-blur-xl p-8 rounded-3xl hover:bg-white/15 transition-all duration-500 h-full transform hover:-translate-y-4 border border-white/10 hover:border-white/20" style={{ boxShadow: '0 20px 40px rgba(0, 0, 0, 0.2)' }}>
+                    <div className="group bg-white/10 backdrop-blur-xl p-6 md:p-8 rounded-2xl md:rounded-3xl hover:bg-white/15 transition-all duration-500 h-full transform hover:-translate-y-2 lg:hover:-translate-y-4 border border-white/10 hover:border-white/20" style={{ boxShadow: '0 20px 40px rgba(0, 0, 0, 0.2)' }}>
                       {/* Step number circle */}
-                      <div className="relative inline-flex items-center justify-center mb-8">
+                      <div className="relative inline-flex items-center justify-center mb-6 md:mb-8">
                         <div className="absolute inset-0 rounded-full blur-xl opacity-50 group-hover:opacity-70 transition-opacity" style={{ backgroundColor: index % 2 === 0 ? '#00B8A9' : '#FF8C42' }}></div>
-                        <div className="relative w-20 h-20 rounded-2xl flex items-center justify-center" style={{ background: `linear-gradient(135deg, ${index % 2 === 0 ? '#00B8A9' : '#FF8C42'} 0%, ${index % 2 === 0 ? '#1A4D4D' : '#FF6B2B'} 100%)` }}>
-                          <span className="text-white">{step.icon}</span>
+                        <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-xl md:rounded-2xl flex items-center justify-center" style={{ background: `linear-gradient(135deg, ${index % 2 === 0 ? '#00B8A9' : '#FF8C42'} 0%, ${index % 2 === 0 ? '#1A4D4D' : '#FF6B2B'} 100%)` }}>
+                          <span className="text-white scale-90 md:scale-100">{step.icon}</span>
                         </div>
                       </div>
                       
-                      <div className="text-sm font-bold mb-3" style={{ color: index % 2 === 0 ? '#00B8A9' : '#FF8C42' }}>
+                      <div className="text-xs md:text-sm font-bold mb-2 md:mb-3" style={{ color: index % 2 === 0 ? '#00B8A9' : '#FF8C42' }}>
                         Step {step.number}
                       </div>
                       
-                      <h3 className="text-2xl font-bold mb-4 text-white">
+                      <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-white">
                         {step.title}
                       </h3>
-                      <p className="leading-relaxed text-base text-white/70">
+                      <p className="leading-relaxed text-sm md:text-base text-white/70">
                         {step.description}
                       </p>
                     </div>
                   </div>
 
-                  {/* Center Circle */}
-                  <div className="hidden md:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  {/* Center Circle - Only on Desktop */}
+                  <div className="hidden lg:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
                     <div
                       className={`w-6 h-6 rounded-full border-4 transition-all duration-700 ${
                         isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
