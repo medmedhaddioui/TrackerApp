@@ -32,13 +32,14 @@ const AnimatedSection = ({ children, delay = 0, className = '' }) => {
       }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const currentRef = sectionRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
@@ -46,7 +47,7 @@ const AnimatedSection = ({ children, delay = 0, className = '' }) => {
   return (
     <div
       ref={sectionRef}
-      className={`transform transition-all duration-[800ms] ease-out ${className} ${
+      className={`transform transition-all duration-800 ease-out ${className} ${
         isVisible
           ? 'opacity-100 translate-y-0 scale-100'
           : 'opacity-0 translate-y-12 scale-95'
@@ -62,17 +63,17 @@ const AnimatedSection = ({ children, delay = 0, className = '' }) => {
 };
 
 export default function HomePage() {
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  // const scrollToSection = (id) => {
+  //   const element = document.getElementById(id);
+  //   if (element) {
+  //     element.scrollIntoView({ behavior: 'smooth' });
+  //   }
+  // };
 
   return (
     <>
       {/* Hero doesn't need animation - it's the first thing visible */}
-      <Hero scrollToSection={scrollToSection} />
+      <Hero  />
       
       {/* All sections animate on scroll - both directions */}
       <AnimatedSection delay={100}>
