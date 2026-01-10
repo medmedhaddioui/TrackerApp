@@ -1,26 +1,18 @@
 import { useState, useEffect } from "react";
-
-import { Link,  /*useNavigate */ } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdown, setDropdown] = useState(null);
-  //  const navigate = useNavigate();
+  const [nestedDropdown, setNestedDropdown] = useState(null);
    
-   useEffect(() => {
-  if (menuOpen) {
-    document.body.style.overflow = "hidden";
-  } else {
-    document.body.style.overflow = "auto";
-  }
-}, [menuOpen]);
-
-  // const scrollToSection = (id) => {
-  //   const element = document.getElementById(id);
-  //   if (element) {
-  //     element.scrollIntoView({ behavior: 'smooth' });
-  //   }
-  // }; 
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [menuOpen]);
 
   return (
     <>
@@ -32,149 +24,239 @@ export function Navigation() {
           </Link>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
+            {/* 1. Solutions */}
             <div className="relative group">
               <button 
-                onMouseEnter={() => setDropdown('home')}
+                onMouseEnter={() => setDropdown('solutions')}
                 className="nav-link text-gray-800 hover:text-teal-600 flex items-center gap-1"
               >
-                Home <span className="text-xs">▾</span>
+                Solutions<span className="text-xs">▾</span>
               </button>
-              {dropdown === 'home' && (
+              {dropdown === 'solutions' && (
                 <div 
-                  onMouseEnter={() => setDropdown('home')}
+                  onMouseEnter={() => setDropdown('solutions')}
                   onMouseLeave={() => setDropdown(null)}
                   className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl py-2 border border-gray-100 animate-fade-in"
                 >
-                  <a href="/#about" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
-                    About
-                  </a>
-                  <a href="/#benefits" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
-                    Benefits
-                  </a>
-                  <a href="/#programs" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
-                    Programs
-                  </a>
-                  <a href="/#how-it-works" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
-                    How It Works
-                  </a>
-                  <a href="/#contact" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
-                    Contact
-                  </a>
+                  <Link to="/solutions/industry-internships" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                    Industry Internships
+                  </Link>
+                  <Link to="/solutions/co-hosted-programs" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                    Co-Hosted Programs
+                  </Link>
+                  <Link to="/solutions/custom-training" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                    Custom Training Programs
+                  </Link>
+                  <Link to="/solutions/industrial-courses" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                    Industrial Courses
+                  </Link>
+                  <Link to="/solutions/workshops-masterclasses" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                    Workshops & Masterclasses
+                  </Link>
+                  <Link to="/solutions/bootcamps" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                    Bootcamps & Career Tracks
+                  </Link>
+                  <Link to="/solutions/career-mentorship" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                    Career Mentorship (1-to-1)
+                  </Link>
                 </div>
               )}
             </div>
+
+            {/* 2. Who It's For */}
             <div className="relative group">
               <button 
-                onMouseEnter={() => setDropdown('companies')}
+                onMouseEnter={() => setDropdown('who-its-for')}
                 className="nav-link text-gray-800 hover:text-teal-600 flex items-center gap-1"
               >
-                Companies <span className="text-xs">▾</span>
+                Who It's For <span className="text-xs">▾</span>
               </button>
-              {dropdown === 'companies' && (
+              {dropdown === 'who-its-for' && (
                 <div 
-                  onMouseEnter={() => setDropdown('companies')}
+                  onMouseEnter={() => setDropdown('who-its-for')}
+                  onMouseLeave={() => setDropdown(null)}
+                  className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl py-2 border border-gray-100 animate-fade-in"
+                >
+                  <Link to="/for/students-graduates" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                    Students & Graduates
+                  </Link>
+                  <Link to="/for/universities-educators" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                    Universities & Educators
+                  </Link>
+                  <Link to="/for/companies-organizations" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                    Companies & Organizations
+                  </Link>
+                  <Link to="/for/governments" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                    Governments & Public Sector
+                  </Link>
+                  <Link to="/for/institutions-ngos" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                    Institutions & NGOs
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            {/* 3. Experiences */}
+            <div className="relative group">
+              <button 
+                onMouseEnter={() => setDropdown('experiences')}
+                className="nav-link text-gray-800 hover:text-teal-600 flex items-center gap-1"
+              >
+                Experiences <span className="text-xs">▾</span>
+              </button>
+              {dropdown === 'experiences' && (
+                <div 
+                  onMouseEnter={() => setDropdown('experiences')}
                   onMouseLeave={() => setDropdown(null)}
                   className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl py-2 border border-gray-100 animate-fade-in"
                 >
-                  <Link to="/companies" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
-                    Host an Intern
+                  <Link to="/experiences/real-projects" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                    Real Projects
                   </Link>
-                  <Link to="/companies" onClick={() => setTimeout(() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' }), 100)} className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
-                    How It Works
+                  <Link to="/experiences/global-exposure" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                    Global Exposure
                   </Link>
-                  <Link to="/companies" onClick={() => setTimeout(() => document.getElementById('faqs')?.scrollIntoView({ behavior: 'smooth' }), 100)} className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
-                    FAQs
+                  <Link to="/experiences/career-outcomes" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                    Career Outcomes
+                  </Link>
+                  <Link to="/experiences/success-stories" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                    Success Stories
+                  </Link>
+                  <Link to="/experiences/testimonials" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                    Feedback & Testimonials
                   </Link>
                 </div>
               )}
             </div>
+
+            {/* 4. Ecosystem */}
             <div className="relative group">
               <button 
-                onMouseEnter={() => setDropdown('educators')}
+                onMouseEnter={() => setDropdown('ecosystem')}
                 className="nav-link text-gray-800 hover:text-teal-600 flex items-center gap-1"
               >
-                Educators <span className="text-xs">▾</span>
+                Ecosystem <span className="text-xs">▾</span>
               </button>
-              {dropdown === 'educators' && (
+              {dropdown === 'ecosystem' && (
                 <div 
-                  onMouseEnter={() => setDropdown('educators')}
+                  onMouseEnter={() => setDropdown('ecosystem')}
+                  onMouseLeave={() => setDropdown(null)}
+                  className="absolute top-full left-0 mt-2 w-60 bg-white rounded-lg shadow-xl py-2 border border-gray-100 animate-fade-in"
+                >
+                  <Link to="/ecosystem/volunteer-expert" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                    Volunteer as an Expert
+                  </Link>
+                  <Link to="/ecosystem/hiring-initiatives" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                    Hiring Initiatives
+                  </Link>
+                  <Link to="/ecosystem/events" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                    Educational & Career Events
+                  </Link>
+                  <Link to="/ecosystem/expert-network" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                    Global Expert Network
+                  </Link>
+                  <Link to="/ecosystem/industry-engagements" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                    Industry Engagements
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            {/* 5. Partnerships */}
+            <div className="relative group">
+              <button 
+                onMouseEnter={() => setDropdown('partnerships')}
+                className="nav-link text-gray-800 hover:text-teal-600 flex items-center gap-1"
+              >
+                Partnerships <span className="text-xs">▾</span>
+              </button>
+              {dropdown === 'partnerships' && (
+                <div 
+                  onMouseEnter={() => setDropdown('partnerships')}
                   onMouseLeave={() => setDropdown(null)}
                   className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl py-2 border border-gray-100 animate-fade-in"
                 >
-                  <Link to="/educators/universities" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
-                    Universities
+                  <Link to="/partnerships/university" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                    University Partnerships
                   </Link>
-                  <Link to="/educators/bootcamps" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
-                    Bootcamps
+                  <Link to="/partnerships/industry" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                    Industry Partners
                   </Link>
-                  <Link to="/educators/governments" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
-                    Governments
+                  
+                  {/* Nested Affiliate Network */}
+                  <div 
+                    className="relative"
+                    onMouseEnter={() => setNestedDropdown('affiliates')}
+                    onMouseLeave={() => setNestedDropdown(null)}
+                  >
+                    <button className="w-full text-left px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors flex items-center justify-between">
+                      Affiliate Network <span className="text-xs">›</span>
+                    </button>
+                    {nestedDropdown === 'affiliates' && (
+                      <div className="absolute left-full top-0 ml-1 w-48 bg-white rounded-lg shadow-xl py-2 border border-gray-100">
+                        <Link to="/partnerships/affiliates/career-coaches" className="block px-4 py-2 text-gray-800 hover:bg-orange-500 hover:text-white transition-colors">
+                          Career Coaches
+                        </Link>
+                        <Link to="/partnerships/affiliates/influencers" className="block px-4 py-2 text-gray-800 hover:bg-orange-500 hover:text-white transition-colors">
+                          Influencers
+                        </Link>
+                        <Link to="/partnerships/affiliates/agencies" className="block px-4 py-2 text-gray-800 hover:bg-orange-500 hover:text-white transition-colors">
+                          Agencies
+                        </Link>
+                        <Link to="/partnerships/affiliates/consultants" className="block px-4 py-2 text-gray-800 hover:bg-orange-500 hover:text-white transition-colors">
+                          Consultants
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+
+                  <Link to="/partnerships/co-host" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                    Become a Co-Host
                   </Link>
-                  <Link to="/educators/affiliates" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
-                    Affiliates
+                  <Link to="/partnerships/strategic-alliances" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                    Strategic Alliances
                   </Link>
                 </div>
               )}
             </div>
-            <div className="relative group">
-              <button 
-                onMouseEnter={() => setDropdown('interns')}
-                className="nav-link text-gray-800 hover:text-teal-600 flex items-center gap-1"
-              >
-                Interns <span className="text-xs">▾</span>
-              </button>
-              {dropdown === 'interns' && (
-                <div 
-                  onMouseEnter={() => setDropdown('interns')}
-                  onMouseLeave={() => setDropdown(null)}
-                  className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl py-2 border border-gray-100"
-                >
-                  <Link to="/interns" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
-                    Apply for Internships
-                  </Link>
-                  <a href="/interns#how-it-works" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
-                    How It Works
-                  </a>
-                  <a href="/interns#career-fields" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
-                    Career Fields
-                  </a>
-                  <a href="/interns#experiences" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
-                    Experiences
-                  </a>
-                  <a href="/interns#faqs" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
-                    FAQs
-                  </a>
-                </div>
-              )}
-            </div>
+
+            {/* 6. About */}
             <div className="relative group">
               <button 
                 onMouseEnter={() => setDropdown('about')}
                 className="nav-link text-gray-800 hover:text-teal-600 flex items-center gap-1"
               >
-                About Us <span className="text-xs">▾</span>
+                About <span className="text-xs">▾</span>
               </button>
               {dropdown === 'about' && (
                 <div 
                   onMouseEnter={() => setDropdown('about')}
                   onMouseLeave={() => setDropdown(null)}
-                  className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl py-2 border border-gray-100 animate-fade-in"
+                  className="absolute top-full left-0 mt-2 w-60 bg-white rounded-lg shadow-xl py-2 border border-gray-100 animate-fade-in"
                 >
-                  <Link to="/about/our-mission" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
-                    Our Mission
+                  <Link to="/about/mission-vision" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                    Our Mission & Vision
                   </Link>
-                  <Link to="/about/team" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
-                    Our Team
+                  <Link to="/about/our-model" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                    Our Model (How We Work)
                   </Link>
-                  <Link to="/about/join-us" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
-                    Join Us
+                  <Link to="/about/team-experts" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                    Our Team & Experts
+                  </Link>
+                  <Link to="/about/european-network" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                    Our European Network
+                  </Link>
+                  <Link to="/about/contact" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                    Contact Us
                   </Link>
                 </div>
               )}
             </div>
-            <Link to="/" className="text-white px-6 py-2 rounded-lg font-semibold bg-orange-500 hover:bg-orange-600 transition-colors">
-              Get Started
+
+            {/* 7. Login/Portal */}
+            <Link to="/login" className="text-white px-6 py-2 rounded-lg font-semibold bg-orange-500 hover:bg-orange-600 transition-colors">
+              Login / Portal
             </Link>
           </div>
 
@@ -194,40 +276,62 @@ export function Navigation() {
       </div>
     </nav>
 
-    {/* MOBILE MENU OUTSIDE NAV TO FIX STACKING CONTEXT */}
+    {/* MOBILE MENU */}
     {menuOpen && (
       <div className="fixed inset-0 top-16 bg-white z-[10000] overflow-y-auto md:hidden">
         <div className="pl-4 pb-10">
 
-          <p className="py-2 font-semibold text-teal-800">Home</p>
-          <a href="/#about" className="block py-2" onClick={() => setMenuOpen(false)}>About</a>
-          <a href="/#benefits" className="block py-2" onClick={() => setMenuOpen(false)}>Benefits</a>
-          <a href="/#programs" className="block py-2" onClick={() => setMenuOpen(false)}>Programs</a>
-          <a href="/#how-it-works" className="block py-2" onClick={() => setMenuOpen(false)}>How It Works</a>
-          <a href="/#contact" className="block py-2" onClick={() => setMenuOpen(false)}>Contact</a>
+          <p className="py-2 font-semibold text-teal-800 mt-4">Solutions</p>
+          <Link to="/solutions/industry-internships" className="block py-2" onClick={() => setMenuOpen(false)}>Industry Internships</Link>
+          <Link to="/solutions/co-hosted-programs" className="block py-2" onClick={() => setMenuOpen(false)}>Co-Hosted Programs</Link>
+          <Link to="/solutions/custom-training" className="block py-2" onClick={() => setMenuOpen(false)}>Custom Training Programs</Link>
+          <Link to="/solutions/industrial-courses" className="block py-2" onClick={() => setMenuOpen(false)}>Industrial Courses</Link>
+          <Link to="/solutions/workshops-masterclasses" className="block py-2" onClick={() => setMenuOpen(false)}>Workshops & Masterclasses</Link>
+          <Link to="/solutions/bootcamps" className="block py-2" onClick={() => setMenuOpen(false)}>Bootcamps & Career Tracks</Link>
+          <Link to="/solutions/career-mentorship" className="block py-2" onClick={() => setMenuOpen(false)}>Career Mentorship (1-to-1)</Link>
 
-          <p className="py-2 font-semibold text-teal-800 mt-4">Companies</p>
-          <Link to="/companies" className="block py-2" onClick={() => setMenuOpen(false)}>Host an Intern</Link>
-          <Link to="/companies" className="block py-2" onClick={() => setMenuOpen(false)}>How It Works</Link>
-          <Link to="/companies" className="block py-2" onClick={() => setMenuOpen(false)}>FAQs</Link>
+          <p className="py-2 font-semibold text-teal-800 mt-4">Who It's For</p>
+          <Link to="/for/students-graduates" className="block py-2" onClick={() => setMenuOpen(false)}>Students & Graduates</Link>
+          <Link to="/for/universities-educators" className="block py-2" onClick={() => setMenuOpen(false)}>Universities & Educators</Link>
+          <Link to="/for/companies-organizations" className="block py-2" onClick={() => setMenuOpen(false)}>Companies & Organizations</Link>
+          <Link to="/for/governments" className="block py-2" onClick={() => setMenuOpen(false)}>Governments & Public Sector</Link>
+          <Link to="/for/institutions-ngos" className="block py-2" onClick={() => setMenuOpen(false)}>Institutions & NGOs</Link>
 
-          <p className="py-2 font-semibold text-teal-800 mt-4">Educators</p>
-          <Link to="/educators/universities" className="block py-2" onClick={() => setMenuOpen(false)}>Universities</Link>
-          <Link to="/educators/bootcamps" className="block py-2" onClick={() => setMenuOpen(false)}>Bootcamps</Link>
-          <Link to="/educators/governments" className="block py-2" onClick={() => setMenuOpen(false)}>Governments</Link>
-          <Link to="/educators/affiliates" className="block py-2" onClick={() => setMenuOpen(false)}>Affiliates</Link>
+          <p className="py-2 font-semibold text-teal-800 mt-4">Experiences</p>
+          <Link to="/experiences/real-projects" className="block py-2" onClick={() => setMenuOpen(false)}>Real Projects</Link>
+          <Link to="/experiences/global-exposure" className="block py-2" onClick={() => setMenuOpen(false)}>Global Exposure</Link>
+          <Link to="/experiences/career-outcomes" className="block py-2" onClick={() => setMenuOpen(false)}>Career Outcomes</Link>
+          <Link to="/experiences/success-stories" className="block py-2" onClick={() => setMenuOpen(false)}>Success Stories</Link>
+          <Link to="/experiences/testimonials" className="block py-2" onClick={() => setMenuOpen(false)}>Feedback & Testimonials</Link>
 
-          <p className="py-2 font-semibold text-teal-800 mt-4">Interns</p>
-          <Link to="/interns" className="block py-2" onClick={() => setMenuOpen(false)}>Apply for Internships</Link>
-          <a href="/interns#how-it-works" className="block py-2" onClick={() => setMenuOpen(false)}>How It Works</a>
-          <a href="/interns#career-fields" className="block py-2" onClick={() => setMenuOpen(false)}>Career Fields</a>
-          <a href="/interns#experiences" className="block py-2" onClick={() => setMenuOpen(false)}>Experiences</a>
-          <a href="/interns#faqs" className="block py-2" onClick={() => setMenuOpen(false)}>FAQs</a>
+          <p className="py-2 font-semibold text-teal-800 mt-4">Ecosystem</p>
+          <Link to="/ecosystem/volunteer-expert" className="block py-2" onClick={() => setMenuOpen(false)}>Volunteer as an Expert</Link>
+          <Link to="/ecosystem/hiring-initiatives" className="block py-2" onClick={() => setMenuOpen(false)}>Hiring Initiatives</Link>
+          <Link to="/ecosystem/events" className="block py-2" onClick={() => setMenuOpen(false)}>Educational & Career Events</Link>
+          <Link to="/ecosystem/expert-network" className="block py-2" onClick={() => setMenuOpen(false)}>Global Expert Network</Link>
+          <Link to="/ecosystem/industry-engagements" className="block py-2" onClick={() => setMenuOpen(false)}>Industry Engagements</Link>
 
-          <p className="py-2 font-semibold text-teal-800 mt-4">About Us</p>
-          <Link to="/about/our-mission" className="block py-2" onClick={() => setMenuOpen(false)}>Our Mission</Link>
-          <Link to="/about/team" className="block py-2" onClick={() => setMenuOpen(false)}>Our Team</Link>
-          <Link to="/about/join-us" className="block py-2" onClick={() => setMenuOpen(false)}>Join Us</Link>
+          <p className="py-2 font-semibold text-teal-800 mt-4">Partnerships</p>
+          <Link to="/partnerships/university" className="block py-2" onClick={() => setMenuOpen(false)}>University Partnerships</Link>
+          <Link to="/partnerships/industry" className="block py-2" onClick={() => setMenuOpen(false)}>Industry Partners</Link>
+          <p className="py-2 pl-4 font-semibold text-orange-600">Affiliate Network</p>
+          <Link to="/partnerships/affiliates/career-coaches" className="block py-2 pl-8" onClick={() => setMenuOpen(false)}>Career Coaches</Link>
+          <Link to="/partnerships/affiliates/influencers" className="block py-2 pl-8" onClick={() => setMenuOpen(false)}>Influencers</Link>
+          <Link to="/partnerships/affiliates/agencies" className="block py-2 pl-8" onClick={() => setMenuOpen(false)}>Agencies</Link>
+          <Link to="/partnerships/affiliates/consultants" className="block py-2 pl-8" onClick={() => setMenuOpen(false)}>Consultants</Link>
+          <Link to="/partnerships/co-host" className="block py-2" onClick={() => setMenuOpen(false)}>Become a Co-Host</Link>
+          <Link to="/partnerships/strategic-alliances" className="block py-2" onClick={() => setMenuOpen(false)}>Strategic Alliances</Link>
+
+          <p className="py-2 font-semibold text-teal-800 mt-4">About</p>
+          <Link to="/about/mission-vision" className="block py-2" onClick={() => setMenuOpen(false)}>Our Mission & Vision</Link>
+          <Link to="/about/our-model" className="block py-2" onClick={() => setMenuOpen(false)}>Our Model (How We Work)</Link>
+          <Link to="/about/team-experts" className="block py-2" onClick={() => setMenuOpen(false)}>Our Team & Experts</Link>
+          <Link to="/about/european-network" className="block py-2" onClick={() => setMenuOpen(false)}>Our European Network</Link>
+          <Link to="/about/contact" className="block py-2" onClick={() => setMenuOpen(false)}>Contact Us</Link>
+
+          <Link to="/login" className="block py-3 px-6 mt-6 bg-orange-500 text-white rounded-lg font-semibold text-center w-48" onClick={() => setMenuOpen(false)}>
+            Login / Portal
+          </Link>
 
         </div>
       </div>

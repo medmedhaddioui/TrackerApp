@@ -1,94 +1,199 @@
-export function Proposition () {
-  const values = [
+import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
+
+export function Proposition() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const sliderRef = useRef(null);
+
+  const solutions = [
     {
-      title: 'Global Opportunities',
-      description: 'Access internships across 80+ countries with leading companies worldwide. No geographical barriers—work remotely from anywhere in the world.',
+      title: 'Universities & Institutions',
       icon: (
-        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
         </svg>
-      )
+      ),
+      link: '/solutions/universities-institutions'
     },
     {
-      title: 'Guaranteed Experience',
-      description: 'We guarantee real-world work experience with verified companies. Gain practical skills through meaningful projects that contribute to your career growth.',
+      title: 'Companies & Corporates',
       icon: (
-        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
         </svg>
-      )
+      ),
+      link: '/solutions/companies-corporates'
     },
     {
-      title: 'Industry Mentorship',
-      description: 'Learn from experienced professionals who guide you throughout your internship. Get personalized feedback and develop skills that employers value.',
+      title: 'Governments & Public Sector',
       icon: (
-        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>
+      ),
+      link: '/solutions/governments-public-sector'
+    },
+    {
+      title: 'Students & Graduates',
+      icon: (
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
         </svg>
-      )
+      ),
+      link: '/solutions/students-graduates'
     },
     {
-      title: 'Career Development',
-      description: 'Build your professional network, enhance your resume, and develop essential career skills. Our platform prepares you for the future of work.',
+      title: 'Educational Institutions',
       icon: (
-        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
         </svg>
-      )
+      ),
+      link: '/solutions/educational-institutions'
     },
     {
-      title: 'Flexible & Remote',
-      description: 'All internships are remote, giving you flexibility to work from anywhere. Balance your studies, part-time work, and gain international experience.',
+      title: 'Non-Profit Organizations',
       icon: (
-        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
         </svg>
-      )
-    },
-    {
-      title: 'Proven Success',
-      description: 'Join 250,000+ interns who have launched successful careers through our platform. With 95% satisfaction and 1 in 3 hired post-completion, we deliver results.',
-      icon: (
-        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-        </svg>
-      )
+      ),
+      link: '/solutions/non-profit-organizations'
     }
   ];
 
+  const totalSlides = solutions.length - 2; // Show 3 cards, so max index is length - 3 + 1
+
+  useEffect(() => {
+    if (isHovered) return;
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => {
+        if (prev >= totalSlides) {
+          return 0;
+        }
+        return prev + 1;
+      });
+    }, 4500);
+
+    return () => clearInterval(interval);
+  }, [isHovered, totalSlides]);
+
+  const handleDotClick = (index) => {
+    setCurrentIndex(index);
+  };
+
   return (
-    <section className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0 opacity-5">
-        <img src="/career-placement-girl.png" alt="" className="w-full h-full object-cover" />
+    <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-b from-white to-gray-50">
+      {/* Background decorations */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-5">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, #00B8A9 0%, transparent 70%)', filter: 'blur(80px)' }}></div>
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, #FF8C42 0%, transparent 70%)', filter: 'blur(80px)' }}></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full mb-6" style={{ background: 'linear-gradient(135deg, rgba(0,184,169,0.1) 0%, rgba(255,140,66,0.1) 100%)', border: '1px solid rgba(0,184,169,0.2)' }}>
-            <svg className="w-5 h-5" style={{ color: '#FF8C42' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        {/* Header */}
+        <div className="text-center mb-12 md:mb-16">
+          <div className="inline-flex items-center gap-2 px-4 md:px-6 py-2 md:py-3 rounded-full mb-4 md:mb-6" style={{ background: 'linear-gradient(135deg, rgba(0,184,169,0.1) 0%, rgba(255,140,66,0.1) 100%)', border: '1px solid rgba(0,184,169,0.2)' }}>
+            <svg className="w-4 h-4 md:w-5 md:h-5" style={{ color: '#00B8A9' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
-            <span className="font-semibold text-sm" style={{ color: '#FF8C42' }}>The Solution</span>
+            <span className="font-semibold text-xs md:text-sm" style={{ color: '#00B8A9' }}>Our Solutions</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold mb-6" style={{ color: '#1A4D4D' }}>Virtual Internships</h2>
-          <p className="text-xl md:text-2xl font-light max-w-3xl mx-auto" style={{ color: '#2D2D2D' }}>Connecting educators, companies, and interns to create lasting, meaningful impact</p>
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6" style={{ color: '#1A4D4D' }}>
+            Who We Serve
+          </h2>
+          <p className="text-lg md:text-xl lg:text-2xl font-light max-w-3xl mx-auto" style={{ color: '#2D2D2D' }}>
+            Tailored solutions for every stakeholder
+          </p>
         </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {values.map((value, index) => (
-            <div key={index} className="group relative p-8 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 overflow-hidden border border-gray-100 card-animate">
-              <div className="absolute top-0 left-0 w-1.5 h-full transition-all duration-500 group-hover:w-2" style={{ backgroundColor: index % 2 === 0 ? '#00B8A9' : '#FF8C42' }}></div>
-              <div className="absolute top-0 right-0 w-32 h-32 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-3xl" style={{ backgroundColor: index % 2 === 0 ? 'rgba(0,184,169,0.2)' : 'rgba(255,140,66,0.2)' }}></div>
-              <div className="relative">
-                <div className="w-16 h-16 rounded-2xl mb-6 flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 icon-animate" style={{ background: `linear-gradient(135deg, ${index % 2 === 0 ? '#00B8A9' : '#FF8C42'} 0%, ${index % 2 === 0 ? '#1A4D4D' : '#FF6B2B'} 100%)`, color: '#FFFFFF', boxShadow: `0 10px 30px ${index % 2 === 0 ? 'rgba(0,184,169,0.3)' : 'rgba(255,140,66,0.3)'}` }}>
-                  {value.icon}
-                </div>
-                <h3 className="text-2xl font-bold mb-4 transition-colors duration-300" style={{ color: '#1A4D4D' }}>{value.title}</h3>
-                <p className="leading-relaxed text-base transition-all duration-300" style={{ color: '#2D2D2D', opacity: 0.9 }}>{value.description}</p>
-              </div>
+
+        {/* Slider Container */}
+        <div 
+          ref={sliderRef}
+          className="relative"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          {/* Cards Wrapper */}
+          <div className="overflow-visible">
+            <div 
+              className="flex transition-transform duration-700 ease-out"
+              style={{ 
+                transform: `translateX(-${currentIndex * (100 / Math.min(solutions.length, 3))}%)`
+              }}
+            >
+              {solutions.map((solution, index) => (
+                <Link
+                  key={index}
+                  to={solution.link}
+                  className="group flex-shrink-0 px-3 md:px-4"
+                  style={{ 
+                    width: `${100 / Math.min(solutions.length, 3)}%`,
+                    minWidth: '280px'
+                  }}
+                >
+                  <div className="relative bg-white rounded-3xl p-8 md:p-10 shadow-lg transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl border-2 border-gray-100 hover:border-[#1A4D4D] h-full flex flex-col items-center justify-center text-center min-h-[300px]">
+                    {/* Glow effect on hover */}
+                    <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: 'linear-gradient(135deg, rgba(0,184,169,0.05) 0%, rgba(255,140,66,0.05) 100%)' }}></div>
+                    
+                    <div className="relative z-10">
+                      {/* Icon */}
+                      <div 
+                        className="w-24 h-24 md:w-28 md:h-28 rounded-2xl mb-6 md:mb-8 flex items-center justify-center mx-auto transition-all duration-500 group-hover:scale-110 group-hover:rotate-3"
+                        style={{ 
+                          background: 'linear-gradient(135deg, #00B8A9 0%, #1A4D4D 100%)',
+                          color: '#FFFFFF',
+                          boxShadow: '0 10px 30px rgba(0,184,169,0.3)'
+                        }}
+                      >
+                        {solution.icon}
+                      </div>
+                      
+                      {/* Title */}
+                      <h3 className="text-2xl md:text-3xl font-bold" style={{ color: '#1A4D4D' }}>
+                        {solution.title}
+                      </h3>
+                      
+                      {/* Arrow */}
+                      <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <svg className="w-6 h-6 mx-auto" style={{ color: '#FF8C42' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              ))}
             </div>
-          ))}
+          </div>
+
+          {/* Navigation Dots */}
+          <div className="flex justify-center gap-3 mt-10 md:mt-12">
+            {Array.from({ length: totalSlides + 1 }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => handleDotClick(index)}
+                className={`transition-all duration-300 rounded-full ${
+                  currentIndex === index 
+                    ? 'w-10 h-3' 
+                    : 'w-3 h-3 hover:bg-[#00B8A9]/50'
+                }`}
+                style={{ 
+                  backgroundColor: currentIndex === index ? '#00B8A9' : 'rgba(0,184,169,0.2)'
+                }}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Auto-play indicator */}
+        <div className="text-center mt-6 text-sm" style={{ color: '#2D2D2D', opacity: 0.6 }}>
+          Auto-playing • Hover to pause
         </div>
       </div>
     </section>
