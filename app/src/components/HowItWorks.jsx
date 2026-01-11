@@ -9,8 +9,8 @@ export function HowItWorks() {
   const steps = [
     {
       number: '01',
-      title: 'Create Your Profile',
-      description: 'Sign up as an intern, company, or educator. Complete your profile with your goals, skills, and interests to get matched with the perfect opportunities.',
+      title: 'Partner or Apply',
+      description: 'Sign up as Partner, company, or educator. Complete your profile with your goals, skills, and interests to get matched with the perfect opportunities.',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -20,8 +20,8 @@ export function HowItWorks() {
     },
     {
       number: '02',
-      title: 'Browse & Match',
-      description: 'Explore thousands of internship opportunities across 80+ countries. Our platform matches you with positions that align with your career goals and interests.',
+      title: 'Learn by Doing (Real Projects)',
+      description: 'Explore thousands of internship opportunities across 60+ countries. Our platform matches you with positions that align with your career goals and interests.',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -31,7 +31,7 @@ export function HowItWorks() {
     },
     {
       number: '03',
-      title: 'Start Your Internship',
+      title: 'Deliver & Advance',
       description: 'Get onboarded with your host company and begin working on real projects. Receive guidance from industry mentors and develop valuable professional skills.',
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -39,17 +39,6 @@ export function HowItWorks() {
         </svg>
       ),
       side: 'left'
-    },
-    {
-      number: '04',
-      title: 'Build Your Career',
-      description: 'Complete your internship, earn certifications, and build your professional network. Leverage your experience to land your dream job or continue growing.',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-        </svg>
-      ),
-      side: 'right'
     }
   ];
 

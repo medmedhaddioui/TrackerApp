@@ -77,7 +77,7 @@ export function Proposition() {
         }
         return prev + 1;
       });
-    }, 4500);
+    }, 2500);
 
     return () => clearInterval(interval);
   }, [isHovered, totalSlides]);

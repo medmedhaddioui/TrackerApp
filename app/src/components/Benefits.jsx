@@ -1,116 +1,147 @@
-export function Benefits() {
-  const benefits = [
+import React, { useState, useEffect, useRef } from 'react';
+import { Users, BookOpen, UserCheck, Briefcase, Calendar } from 'lucide-react';
+
+export const Benefits = () => {
+  const [isPaused, setIsPaused] = useState(false);
+  const scrollRef = useRef(null);
+
+  const cards = [
     {
-      category: 'For Interns',
-      title: 'Launch Your Career',
-      description: 'Gain global work experience, develop valuable professional skills, and build meaningful connections that open doors to future opportunities.',
-      stat: '95% satisfaction rate',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-        </svg>
-      )
+      id: 1,
+      title: 'Workshops & Masterclasses',
+      icon: BookOpen,
+      description: 'Learn from industry experts',
+      link: '/community/workshops'
     },
     {
-      category: 'For Companies',
-      title: 'Access Top Talent',
-      description: 'Connect with pre-vetted, motivated interns ready to contribute to your business. Build your future talent pipeline with remote team members.',
-      stat: 'Pre-vetted interns',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
-      )
+      id: 2,
+      title: 'Career Mentorship (1-to-1)',
+      icon: Users,
+      description: 'Personalized guidance for your journey',
+      link: '/community/mentorship'
     },
     {
-      category: 'For Educators',
-      title: 'Enhance Curriculum',
-      description: 'Seamlessly integrate real-world internships into your programs. Improve student employability and prepare graduates for the modern workforce.',
-      stat: '80+ countries',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-        </svg>
-      )
+      id: 3,
+      title: 'Volunteer as an Expert',
+      icon: UserCheck,
+      description: 'Share your knowledge and give back',
+      link: '/community/volunteer'
     },
     {
-      category: 'Global Reach',
-      title: 'Work From Anywhere',
-      description: 'Remote internships mean no geographical barriers. Access opportunities worldwide and work with international companies from your location.',
-      stat: '250k+ internships',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      )
+      id: 4,
+      title: 'Hiring Initiatives',
+      icon: Briefcase,
+      description: 'Connect with top opportunities',
+      link: '/community/hiring'
     },
     {
-      category: 'Career Growth',
-      title: 'Real-World Skills',
-      description: 'Develop essential career skills through hands-on projects. Learn from industry professionals and gain experience that employers value.',
-      stat: 'Industry mentorship',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-        </svg>
-      )
-    },
-    {
-      category: 'High Success Rate',
-      title: 'Get Hired',
-      description: 'Our program leads to real results. 1 in 3 interns receive job offers upon completion, turning internships into career opportunities.',
-      stat: '1 in 3 hired',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-        </svg>
-      )
+      id: 5,
+      title: 'Educational & Career Events',
+      icon: Calendar,
+      description: 'Network and grow together',
+      link: '/community/events'
     }
   ];
 
+  // Duplicate cards for seamless loop
+  const duplicatedCards = [...cards, ...cards];
+
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer || isPaused) return;
+
+    let animationFrame;
+    let scrollPosition = 0;
+    const scrollSpeed = 0.5; // pixels per frame
+
+    const animate = () => {
+      scrollPosition += scrollSpeed;
+      
+      // Reset when we've scrolled through one set of cards
+      if (scrollPosition >= scrollContainer.scrollWidth / 2) {
+        scrollPosition = 0;
+      }
+      
+      scrollContainer.scrollLeft = scrollPosition;
+      animationFrame = requestAnimationFrame(animate);
+    };
+
+    animationFrame = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(animationFrame);
+  }, [isPaused]);
+
+  const handleCardClick = (link) => {
+    console.log(`Navigating to: ${link}`);
+    // In a real app: window.location.href = link; or use router
+  };
+
   return (
-    <section id="benefits" className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, rgba(0,184,169,0.05) 50%, #FFFFFF 100%)' }}>
+    <section className="w-full py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, rgba(0,184,169,0.05) 50%, #FFFFFF 100%)' }}>
       {/* Background decorations */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-10" style={{ background: 'radial-gradient(circle, #00B8A9 0%, transparent 70%)', filter: 'blur(80px)' }}></div>
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full opacity-10" style={{ background: 'radial-gradient(circle, #FF8C42 0%, transparent 70%)', filter: 'blur(80px)' }}></div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-20">
+      <div className="max-w-7xl mx-auto mb-20 relative z-10">
+        <div className="text-center">
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full mb-6" style={{ background: 'linear-gradient(135deg, rgba(0,184,169,0.1) 0%, rgba(255,140,66,0.1) 100%)', border: '1px solid rgba(0,184,169,0.2)' }}>
             <svg className="w-5 h-5" style={{ color: '#00B8A9' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
             </svg>
-            <span className="font-semibold text-sm" style={{ color: '#00B8A9' }}>Proven Results</span>
+            <span className="font-semibold text-sm" style={{ color: '#00B8A9' }}>Ecosystem View</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold mb-6" style={{ color: '#1A4D4D' }}>Global Impact</h2>
-          <p className="text-xl md:text-2xl font-light max-w-3xl mx-auto" style={{ color: '#2D2D2D' }}>Real outcomes for interns, companies, and educators worldwide</p>
+          <h2 className="text-4xl md:text-6xl font-bold mb-6" style={{ color: '#1A4D4D' }}>Community & Growth</h2>
+          <p className="text-xl md:text-2xl font-light max-w-3xl mx-auto" style={{ color: '#2D2D2D' }}>Explore our ecosystem of learning and opportunities</p>
         </div>
+      </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {benefits.map((benefit, index) => (
-            <div key={index} className="group relative bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 overflow-hidden border border-gray-100 card-animate">
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: `linear-gradient(135deg, ${index % 2 === 0 ? 'rgba(0,184,169,0.05)' : 'rgba(255,140,66,0.05)'} 0%, transparent 100%)` }}></div>
-              <div className="relative">
-                <div className="flex items-center justify-between mb-6">
-                  <div className="inline-block px-4 py-2 rounded-full text-xs font-bold" style={{ backgroundColor: index % 2 === 0 ? 'rgba(0,184,169,0.15)' : 'rgba(255,140,66,0.15)', color: index % 2 === 0 ? '#00B8A9' : '#FF8C42' }}>
-                    {benefit.category}
+      <div className="relative overflow-hidden">
+        {/* Gradient overlays for fade effect */}
+        <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-16 md:w-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to right, #FFFFFF, transparent)' }} />
+        <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-16 md:w-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to left, #FFFFFF, transparent)' }} />
+        
+        <div 
+          ref={scrollRef}
+          className="flex gap-6 overflow-x-hidden py-4"
+          style={{ scrollBehavior: 'auto' }}
+        >
+          {duplicatedCards.map((card, index) => {
+            const Icon = card.icon;
+            return (
+              <div
+                key={`${card.id}-${index}`}
+                className="group flex-shrink-0 w-72 sm:w-80 md:w-80 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:-translate-y-4 overflow-hidden border border-gray-100"
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+                onClick={() => handleCardClick(card.link)}
+              >
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: `linear-gradient(135deg, ${index % 2 === 0 ? 'rgba(0,184,169,0.05)' : 'rgba(255,140,66,0.05)'} 0%, transparent 100%)` }}></div>
+                <div className="p-6 sm:p-8 relative flex flex-col h-full">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center mb-4 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6" style={{ background: `linear-gradient(135deg, ${index % 2 === 0 ? '#00B8A9' : '#FF8C42'} 0%, ${index % 2 === 0 ? '#1A4D4D' : '#FF6B2B'} 100%)` }}>
+                    <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                   </div>
-                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 icon-animate" style={{ background: `linear-gradient(135deg, ${index % 2 === 0 ? '#00B8A9' : '#FF8C42'} 0%, ${index % 2 === 0 ? '#1A4D4D' : '#FF6B2B'} 100%)`, color: '#FFFFFF' }}>
-                    {benefit.icon}
-                  </div>
-                </div>
-                <h3 className="text-2xl font-bold mt-2 mb-4 transition-colors duration-300" style={{ color: '#1A4D4D' }}>{benefit.title}</h3>
-                <p className="mb-6 leading-relaxed text-base transition-all duration-300" style={{ color: '#2D2D2D', opacity: 0.9 }}>{benefit.description}</p>
-                <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
-                  <div className="text-2xl font-bold transition-transform duration-300 group-hover:scale-110" style={{ color: index % 2 === 0 ? '#00B8A9' : '#FF8C42' }}>
-                    {benefit.stat}
+                  <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 transition-colors duration-300" style={{ color: '#1A4D4D' }}>
+                    {card.title}
+                  </h3>
+                  <p className="mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base transition-all duration-300 flex-grow" style={{ color: '#2D2D2D', opacity: 0.9 }}>
+                    {card.description}
+                  </p>
+                  <div className="mt-auto flex items-center text-sm font-medium transition-transform duration-300 group-hover:translate-x-1" style={{ color: index % 2 === 0 ? '#00B8A9' : '#FF8C42' }}>
+                    <span>Learn more</span>
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
+      </div>
+
+      <div className="text-center mt-6 sm:mt-8 text-xs sm:text-sm font-medium px-4" style={{ color: '#00B8A9' }}>
+        Hover over any card to pause scrolling
       </div>
     </section>
   );
-}
+};

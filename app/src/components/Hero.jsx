@@ -1,6 +1,10 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import { TypewriterWords } from './TypewriterText';
+import { AnimatedCounter } from './AnimatedCounter';
 
-export function Hero({ scrollToSection }) {
+
+export function Hero() {
   return (
     <section id="hero" className="relative pt-32 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0A2A2A 0%, #1A4D4D 50%, #00B8A9 100%)' }}>
       {/* Animated background elements */}
@@ -21,50 +25,74 @@ export function Hero({ scrollToSection }) {
               <span className="text-white font-semibold text-sm">The #1 Global Internship Platform</span>
             </div>
             
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-8 leading-tight tracking-tight text-white">
-              <TypewriterWords 
-                words={['The', 'only', 'platform', 'that', 'guarantees', 'real-world', 'experience']}
-                speed={150}
-                delay={500}
-              />
-            </h2>
+            <div className="mb-8">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-white">
+                <TypewriterWords 
+                  words={['Industry-Led', 'Internships', '&', 'Training', 'Programs']}
+                  speed={150}
+                  delay={500}
+                />
+              </h1>
+              
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight mt-2 text-orange-300" style={{ background: 'linear-gradient(135deg, #FF8C42 0%, #FFB88C 100%)', WebkitBackgroundClip: 'text' }}>
+                <TypewriterWords 
+                  words={['Built', 'with', 'Universities', '&', 'Experts']}
+                  speed={150}
+                  delay={2500}
+                />
+              </h2>
+            </div>
             
-            <p className="text-lg md:text-xl mb-10 max-w-xl text-white/80 leading-relaxed animate-fade-in-up" style={{ animationDelay: '2s', opacity: 0, animationFillMode: 'forwards' }}>
-              Shaping tomorrow's workforce: one internship at a time. Connect with global opportunities across 80+ countries.
+            <p className="text-lg md:text-xl mb-10 max-w-xl text-white/80 leading-relaxed animate-fade-in-up" style={{ animationDelay: '3s', opacity: 0, animationFillMode: 'forwards' }}>
+              Real projects, real supervision, online, hybrid, or on-site delivery.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12 animate-fade-in-up" style={{ animationDelay: '2.3s', opacity: 0, animationFillMode: 'forwards' }}>
-              <button className="group btn-primary btn-press flex items-center justify-center gap-3 px-8 py-4 text-white rounded-2xl font-bold text-lg">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12 animate-fade-in-up" style={{ animationDelay: '3.3s', opacity: 0, animationFillMode: 'forwards' }}>
+              <Link to="/programs" className="group btn-primary btn-press flex items-center justify-center gap-3 px-8 py-4 text-white rounded-2xl font-bold text-lg">
                 <svg className="w-6 h-6 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
-                <span>Apply Now</span>
-              </button>
-              <button onClick={() => scrollToSection('programs')} className="group btn-secondary btn-press flex items-center justify-center gap-3 px-8 py-4 text-white rounded-2xl font-bold text-lg">
+                <span>Explore Programs</span>
+              </Link>
+              <Link to="/partnerships" className="group btn-secondary btn-press flex items-center justify-center gap-3 px-8 py-4 text-white rounded-2xl font-bold text-lg">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
-                <span>Hire Talent</span>
-              </button>
+                <span>Partner With Us</span>
+              </Link>
             </div>
 
             {/* Stats */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-8 animate-fade-in-up" style={{ animationDelay: '2.6s', opacity: 0, animationFillMode: 'forwards' }}>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-1">15k+</div>
-                <div className="text-sm text-white/60">Internships</div>
-              </div>
-              <div className="w-px h-12 bg-white/20 hidden sm:block"></div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-1">35+</div>
-                <div className="text-sm text-white/60">Countries</div>
-              </div>
-              <div className="w-px h-12 bg-white/20 hidden sm:block"></div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-1">95%</div>
-                <div className="text-sm text-white/60">Satisfaction</div>
-              </div>
+            <div
+  className="flex flex-wrap justify-center lg:justify-start gap-8 animate-fade-in-up"
+  style={{ animationDelay: '3.6s', opacity: 0, animationFillMode: 'forwards' }}
+>
+  <div className="text-center">
+    <div className="text-3xl font-bold text-white mb-1">
+      <AnimatedCounter end={90} suffix="k+"  />
+    </div>
+    <div className="text-sm text-white/60">Internships</div>
+  </div>
+
+  <div className="w-px h-12 bg-white/20 hidden sm:block"></div>
+
+  <div className="text-center">
+    <div className="text-3xl font-bold text-white mb-1">
+      <AnimatedCounter end={60} suffix="+"  />
+    </div>
+    <div className="text-sm text-white/60">Countries</div>
+  </div>
+
+  <div className="w-px h-12 bg-white/20 hidden sm:block"></div>
+
+  <div className="text-center">
+    <div className="text-3xl font-bold text-white mb-1">
+      <AnimatedCounter end={95} suffix="%" />
+    </div>
+    <div className="text-sm text-white/60">Satisfaction</div>
+  </div>
             </div>
+
           </div>
 
           {/* Right Image */}
