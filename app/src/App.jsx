@@ -1,7 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navigation } from './shared/Navigation';
-import { Footer } from './components/Footer';
+import { Footer } from './shared/Footer';
 import { ScrollToTop } from './shared/ScrollToTop';
+import IndustryInternship from './pages/IndustryInternship';
+import CoHostedPrograms from './pages/CoHostedPrograms';
+import CustomTrainingPrograms from './pages/CustomTrainingPrograms';
+import IndustrialCourses from './pages/IndustrialCourses';
+import WorkShops from './pages/WorkShops';
+import BootChamps from './pages/BootChamps';
+import CareerMentorship from './pages/CareerMentorship';
 import HomePage from './pages/HomePage';
 import CompaniesPage from './pages/CompaniesPage';
 import EducatorsPage from './pages/EducatorsPage';
@@ -23,6 +30,13 @@ export default function App() {
         <Navigation />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/solutions/industry-internships" element={<IndustryInternship />} />
+          <Route path="/solutions/co-hosted-programs" element={<CoHostedPrograms />} />
+          <Route path="/solutions/custom-training" element={<CustomTrainingPrograms />} />
+          <Route path="/solutions/industrial-courses" element={<IndustrialCourses />} />
+          <Route path="/solutions/workshops" element={<WorkShops />} />
+          <Route path="/solutions/bootcamps" element={<BootChamps />} />
+          <Route path="/solutions/career-mentorship" element={<CareerMentorship />} />
           <Route path="/companies" element={<CompaniesPage />} />
           <Route path="/educators" element={<EducatorsPage />} />
           <Route path="/universities" element={<UniversitiesPage />} />

@@ -5,7 +5,8 @@ export function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
+    role: ''
   });
 
   const [status, setStatus] = useState('');
@@ -52,6 +53,86 @@ export function Contact() {
 
         <form onSubmit={handleSubmit} className="relative bg-white p-10 rounded-3xl shadow-2xl overflow-hidden backdrop-blur-sm" style={{ border: '2px solid rgba(0,184,169,0.1)' }}>
           <div className="absolute top-0 left-0 w-full h-2" style={{ background: 'linear-gradient(90deg, #00B8A9 0%, #FF8C42 100%)' }}></div>
+
+          <div className="mb-8">
+  <label
+    className="block font-bold mb-4 text-base"
+    style={{ color: '#1A4D4D' }}
+  >
+    I would like to start as
+  </label>
+
+  <div className="flex flex-col sm:flex-row gap-4">
+    {/* Student */}
+    <label
+      className={`flex items-center gap-3 px-6 py-4 rounded-xl border-2 cursor-pointer transition-all duration-300 ${
+        formData.role === 'Student'
+          ? 'shadow-lg'
+          : ''
+      }`}
+      style={{
+        borderColor:
+          formData.role === 'Student'
+            ? '#00B8A9'
+            : 'rgba(0,184,169,0.2)',
+        backgroundColor:
+          formData.role === 'Student'
+            ? 'rgba(0,184,169,0.1)'
+            : '#FFFFFF'
+      }}
+    >
+      <input
+        type="radio"
+        name="role"
+        value="Student"
+        checked={formData.role === 'Student'}
+        onChange={(e) =>
+          setFormData({ ...formData, role: e.target.value })
+        }
+        className="hidden"
+        required
+      />
+      <span className="font-semibold" style={{ color: '#1A4D4D' }}>
+        🎓 Student
+      </span>
+    </label>
+
+    {/* Partner */}
+    <label
+      className={`flex items-center gap-3 px-6 py-4 rounded-xl border-2 cursor-pointer transition-all duration-300 ${
+        formData.role === 'Partner'
+          ? 'shadow-lg'
+          : ''
+      }`}
+      style={{
+        borderColor:
+          formData.role === 'Partner'
+            ? '#FF8C42'
+            : 'rgba(0,184,169,0.2)',
+        backgroundColor:
+          formData.role === 'Partner'
+            ? 'rgba(255,140,66,0.1)'
+            : '#FFFFFF'
+      }}
+    >
+      <input
+        type="radio"
+        name="role"
+        value="Partner"
+        checked={formData.role === 'Partner'}
+        onChange={(e) =>
+          setFormData({ ...formData, role: e.target.value })
+        }
+        className="hidden"
+        required
+      />
+      <span className="font-semibold" style={{ color: '#1A4D4D' }}>
+        🤝 Partner
+      </span>
+    </label>
+  </div>
+</div>
+
           
           <div className="mb-6">
             <label className="block font-bold mb-3 text-base" style={{ color: '#1A4D4D' }}>Your Name</label>

@@ -51,7 +51,7 @@ export function Navigation() {
                   <Link to="/solutions/industrial-courses" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
                     Industrial Courses
                   </Link>
-                  <Link to="/solutions/workshops-masterclasses" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
+                  <Link to="/solutions/workshops" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">
                     Workshops & Masterclasses
                   </Link>
                   <Link to="/solutions/bootcamps" className="block px-4 py-2 text-gray-800 hover:bg-teal-600 hover:text-white transition-colors">

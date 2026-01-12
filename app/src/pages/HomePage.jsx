@@ -3,7 +3,7 @@ import { Hero } from '../components/Hero';
 import { Proposition } from '../components/Proposition';
 import { HowItWorks } from '../components/HowItWorks';
 import { Benefits } from '../components/Benefits';
-import { Programs } from '../components/Programs';
+import { Experience } from '../components/Experience';
 import { About } from '../components/About';
 import { Contact } from '../components/Contact';
 import Partners from '../components/Partners';
@@ -83,21 +83,21 @@ export default function HomePage() {
       <AnimatedSection delay={100}>
         <HowItWorks />
       </AnimatedSection>
+
+        <AnimatedSection delay={100}>
+        <Experience />
+      </AnimatedSection>
       
       <AnimatedSection delay={100}>
         <Benefits />
       </AnimatedSection>
       
       <AnimatedSection delay={100}>
-        <Programs />
-      </AnimatedSection>
-      
-      <AnimatedSection delay={100}>
-        <About />
-      </AnimatedSection>
-      
-      <AnimatedSection delay={100}>
         <Partners />
+      </AnimatedSection>
+
+       <AnimatedSection delay={100}>
+        <About />
       </AnimatedSection>
       
       <AnimatedSection delay={100}>
