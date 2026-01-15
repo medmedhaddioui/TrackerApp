@@ -44,6 +44,7 @@ export default {
           900: '#0A2A2A', // Darkest
         }
       },
+      
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out forwards',
         'fade-in-up': 'fadeInUp 0.6s ease-out forwards',

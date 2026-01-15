@@ -21,9 +21,11 @@ import OurMissionPage from './pages/OurMissionPage';
 import OurTeamPage from './pages/OurTeamPage';
 import JoinUsPage from './pages/JoinUsPage';
 import ContactPage from './pages/ContactPage';
+import { DarkModeProvider } from './shared/useDarkMode';
 
 export default function App() {
   return (
+    <DarkModeProvider>
     <Router>
       <ScrollToTop />
       <div className="min-h-screen bg-white">
@@ -61,5 +63,6 @@ export default function App() {
         <Footer />
       </div>
     </Router>
+    </DarkModeProvider>
   );
 }
